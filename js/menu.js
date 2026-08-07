@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     var hamburger = document.getElementById('hamburger');
@@ -8,10 +8,9 @@
     var menuBottom = document.getElementById('menu-bottom');
     var menuLinks = menuOverlay.querySelectorAll('.menu-link');
     var hamLines = hamburger.querySelectorAll('.ham-line');
-    var menuOpen = false;
 
     function openMenu() {
-        menuOpen = true;
+        App.set('menuOpen', true);
         document.body.style.overflow = 'hidden';
         menuOverlay.style.pointerEvents = 'auto';
         menuBackdrop.style.opacity = '1';
@@ -21,8 +20,8 @@
         hamLines[1].style.opacity = '0';
         hamLines[1].style.transform = 'scaleX(0)';
         hamLines[2].style.transform = 'rotate(-45deg) translate(0,0)';
-        menuLinks.forEach(function(link, i) {
-            setTimeout(function() {
+        menuLinks.forEach(function (link, i) {
+            setTimeout(function () {
                 link.style.opacity = '1';
                 link.style.transform = 'translateX(0)';
             }, 100 + i * 60);
@@ -30,7 +29,7 @@
     }
 
     function closeMenu() {
-        menuOpen = false;
+        App.set('menuOpen', false);
         document.body.style.overflow = '';
         menuBackdrop.style.opacity = '0';
         menuPanel.style.transform = 'translateX(100%)';
@@ -39,20 +38,30 @@
         hamLines[1].style.opacity = '1';
         hamLines[1].style.transform = 'scaleX(1)';
         hamLines[2].style.transform = 'translateY(8px)';
-        menuLinks.forEach(function(link) {
+        menuLinks.forEach(function (link) {
             link.style.opacity = '0';
             link.style.transform = 'translateX(32px)';
         });
-        setTimeout(function() {
-            if (!menuOpen) menuOverlay.style.pointerEvents = 'none';
+        setTimeout(function () {
+            if (!App.state.menuOpen) menuOverlay.style.pointerEvents = 'none';
         }, 500);
     }
 
-    hamburger.addEventListener('click', function() { menuOpen ? closeMenu() : openMenu(); });
+    hamburger.addEventListener('click', function () {
+        if (App.state.menuOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
     menuBackdrop.addEventListener('click', closeMenu);
-    menuLinks.forEach(function(link) { link.addEventListener('click', closeMenu); });
-    window.matchMedia('(min-width: 768px)').addEventListener('change', function(e) {
-        if (e.matches && menuOpen) closeMenu();
+    menuLinks.forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    /* Senkron: masaüstüne geçildiğinde menü açıksa otomatik kapanır */
+    App.on('device', function (d) {
+        if (d.isDesktop && App.state.menuOpen) closeMenu();
     });
 
 })();

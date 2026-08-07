@@ -1,19 +1,19 @@
-(function() {
+(function () {
     'use strict';
 
     var progressBar = document.getElementById('scroll-progress');
     var navbar = document.getElementById('navbar');
     var backToTop = document.getElementById('back-to-top');
+    var thresholds = App.config.thresholds;
     var lastScrollY = 0;
-    var scrollTicking = false;
 
-    function handleScroll() {
-        var scrollY = window.scrollY;
-        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    /* Senkron: kaydırma verisi App çekirdeğinden tek akış olarak gelir */
+    App.on('scroll', function (data) {
+        var scrollY = data.scrollY;
 
-        progressBar.style.width = (docHeight > 0 ? (scrollY / docHeight) * 100 : 0) + '%';
+        progressBar.style.width = data.progress + '%';
 
-        if (scrollY > 50) {
+        if (scrollY > thresholds.navShadow) {
             navbar.classList.add('scrolled');
             navbar.style.backgroundColor = 'rgba(255,255,255,0.95)';
         } else {
@@ -21,14 +21,14 @@
             navbar.style.backgroundColor = '';
         }
 
-        if (scrollY > 300 && scrollY > lastScrollY) {
+        if (scrollY > thresholds.navHide && scrollY > lastScrollY) {
             navbar.classList.add('nav-hidden');
         } else {
             navbar.classList.remove('nav-hidden');
         }
         lastScrollY = scrollY;
 
-        if (scrollY > 600) {
+        if (scrollY > thresholds.backToTop) {
             backToTop.style.opacity = '1';
             backToTop.style.transform = 'translateY(0)';
             backToTop.style.pointerEvents = 'auto';
@@ -37,18 +37,9 @@
             backToTop.style.transform = 'translateY(16px)';
             backToTop.style.pointerEvents = 'none';
         }
+    });
 
-        scrollTicking = false;
-    }
-
-    window.addEventListener('scroll', function() {
-        if (!scrollTicking) {
-            requestAnimationFrame(handleScroll);
-            scrollTicking = true;
-        }
-    }, { passive: true });
-
-    backToTop.addEventListener('click', function() {
+    backToTop.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 

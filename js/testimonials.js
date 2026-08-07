@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     var testimonials = [
@@ -11,6 +11,7 @@
     var authorEl = document.getElementById('testimonial-author');
     var starsEl = document.getElementById('testimonial-stars');
     var dots = document.querySelectorAll('.testimonial-dot');
+    var rotationTimer = null;
 
     function rotateTestimonial() {
         quoteEl.style.opacity = '0';
@@ -18,11 +19,11 @@
         authorEl.style.opacity = '0';
         authorEl.style.transform = 'translateY(4px)';
         starsEl.style.opacity = '0';
-        setTimeout(function() {
+        setTimeout(function () {
             currentIdx = (currentIdx + 1) % testimonials.length;
             quoteEl.textContent = testimonials[currentIdx].quote;
             authorEl.textContent = testimonials[currentIdx].author;
-            dots.forEach(function(d, i) {
+            dots.forEach(function (d, i) {
                 d.style.background = i === currentIdx ? '#000' : 'rgba(0,0,0,0.15)';
             });
             quoteEl.style.opacity = '1';
@@ -33,6 +34,34 @@
         }, 400);
     }
 
-    setInterval(rotateTestimonial, 5000);
+    function startRotation() {
+        if (rotationTimer) return;
+        rotationTimer = setInterval(rotateTestimonial, 5000);
+    }
+
+    function stopRotation() {
+        if (!rotationTimer) return;
+        clearInterval(rotationTimer);
+        rotationTimer = null;
+    }
+
+    /* Senkron: azaltılmış hareket tercihi ve sekme görünürlüğüyle uyumlu döngü */
+    if (App.state.reducedMotion) {
+        /* statik ilk yorumda kalır */
+    } else {
+        startRotation();
+    }
+
+    App.on('state:reducedMotion', function (isReduced) {
+        if (isReduced) stopRotation();
+    });
+
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            stopRotation();
+        } else if (!App.state.reducedMotion) {
+            startRotation();
+        }
+    });
 
 })();
