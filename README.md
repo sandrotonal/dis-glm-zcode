@@ -1,111 +1,106 @@
-# 🦷 Dental Health
+# Dental Health
 
-**A premium, mobile-first dental clinic website** — bold typography, masked photo reveals, and a strict black & white editorial language. No card boxes, no clutter: just clean lines, real content, and fast UX.
+A premium, mobile-optimized dental clinic website. Bold typography, masked imagery and a strict black & white design language. No card boxes, no gradients — clean lines, real content, and a fast conversion path.
 
-> 🚨 Static demo — all clinic data (phone, hours, patients) is placeholder and must be replaced before production.
-
----
-
-## ⚡ Badges
-
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)
-![Responsive](https://img.shields.io/badge/Responsive-100%25-28a745?style=flat-square)
+Note: static demo. All clinic data (phone, address, hours) is placeholder and must be replaced before production.
 
 ---
 
-## ✨ Features
+## Features
 
-### 🎨 Design & UX
-- **Splash intro** — plays once per session, skips when arriving at an anchor (`#testimonials`) and honors `prefers-reduced-motion`
-- **Masked hero cards** with focal-point aware image positioning (mobile vs desktop)
-- Animated **marquee strips**, scroll progress bar, hamburger menu, sticky mobile **Call / Book** bar
-- `clamp()` typography scale, hairline `border-row` lists with hover accent lines
+### Design & UX
+- Splash intro that plays once per session, skips when arriving at an in-page target (#testimonials) and respects prefers-reduced-motion
+- Masked hero cards with focal-point aware image positioning on mobile and desktop
+- Image marquees, scroll-reveal animations, hamburger menu, sticky mobile Call/Book bar
+- clamp() typography scale, hairline border-row lists, hover accent lines
 
-### 🧩 Engagement
-- 🧠 **Smile Assessment quiz** — 4 questions → recommended treatment, progress bar, retake
-- ❓ **FAQ accordion** with smooth expand physics (`grid-template-rows`)
-- 📊 **Animated counters** (IntersectionObserver) — years, smiles, rating
+### Engagement
+- Smile Assessment quiz: 4 questions to a recommended treatment, progress bar, retake
+- FAQ accordion on the services page
+- Animated counters (IntersectionObserver) — years, patients, rating
 
-### 🔍 SEO & AI readiness
-- **JSON-LD** `Dentist` (LocalBusiness) schema on every page + `FAQPage` on services
-- `llms.txt` for AI engines
-- Semantic sections, local business address/geo/hours, aggregate rating 4.9 (8.2k reviews)
+### SEO & AI readiness
+- JSON-LD Dentist schema on every page, FAQPage on services
+- llms.txt for AI search engines
+- Semantic HTML, local business address/geo/hours, aggregate rating
 
-### 🍪 Privacy
-- **Cookie consent** with editable preferences panel (toggle UI, 🥇 Strictly Necessary locked), `localStorage`-backed, accessible Esc/backdrop close
+### Privacy
+- Editable cookie consent: banner, settings panel, toggles, localStorage persistence, Esc/backdrop close
 
-### 🖼️ Visuals
-- Local curated photos — clinic, equipment, dentist & team portraits — fully responsive `object-cover` bands with caption gradient overlays
-- QiƱlized Google Maps embed + "Get Directions"
-
----
-
-## 📄 Pages
-
-| Page | Path | Highlights |
-|------|------|------------|
-| 🏠 Home | `index.html` | Splash, masked hero, smile gallery grid, implant section, trust strip, quiz, testimonials, contact CTA |
-| 🩺 Services | `services.html` | 6 border-row services + emergency, clinic photo band, FAQ accordion |
-| 👥 About | `about.html` | Story + photo, animated numbers, "why choose us", team with portraits |
-| 🗺️ Contact | `contact.html` | Info rows, underline form (opens email app), clinic photo, Google Maps embed |
-| 📜 Privacy / Terms | `privacy.html` / `terms.html` | Legal text, border-row sections |
+### Imagery
+- Curated local photos — clinic, dentist and team portraits — fully responsive object-cover bands with caption overlays
+- Embedded Google Map plus "Get Directions"
 
 ---
 
-## 🛠️ Tech Stack
+## Pages
 
-- Plain **HTML5 + Tailwind CSS (CDN)** with a shared `tailwind-config.js`
-- Vanilla **JavaScript ES5-style modules** — no frameworks, no build step
-- **`js/core.js`** acts as the single source of truth: `App.state` + event bus (`App.on`, `App.set`) — modules stay in sync (device change, scroll, scroll nav state)
-- Node.js `--check` for validation (see scripts below)
+| Page | Content |
+| --- | --- |
+| Home (index) | Splash, masked hero, smile gallery, implant section, quiz, testimonials, contact CTA |
+| Services | 6 services border rows, clinic photo band, FAQ accordion |
+| About | Story with photo, animated counters, why-choose-us, team with portraits |
+| Contact | Info border rows, underline form (mailto), clinic photo, Google Maps embed |
+| Privacy / Terms | Legal text with border-row sections |
 
-### 🧩 Script modules
+---
+
+## Tech & Structure
+
+- HTML5 + Tailwind CSS (CDN) with a shared tailwind-config.js
+- Vanilla JavaScript (ES5), no frameworks, no build step
+- js/core.js as the single source of truth: App state + event bus, modules subscribe to it
+
+### Script modules
 
 | File | Purpose |
-`site.js` | Splash guard, navbar hide/shadow, mobile menu, hash jumping, mobile CTA bar, active footer links |
-`core.js` | App state + event bus |
-`masked-cards.js` | Photo focal tracking for hero/section cards |
-`animations.js` | Scroll reveal + stagger delays |
-`testimonials.js` | Rotating review quote + star dots (client-side) |
-`quiz.js` | Smile assessment wizard |
-`faq.js` | FAQ accordion (services) |
-`counters.js` | Animated data counters |
-`contact.js` | mailto-form submit (no backend) |
-`cookies.js` | Consent banner + settings panel (`dh_cookie_prefs`) |
-`ld.js` | JSON-LD schema injection |
+| --- | --- |
+| core.js | App state + event bus (App.on / App.set) |
+| site.js | Navbar shadow/hide, mobile menu, splash guard, mobile CTA bar, back-to-top |
+| masked-cards.js | Photo fill for hero masked cards |
+| animations.js | Scroll reveal |
+| testimonials.js | Rotating testimonials |
+| quiz.js | Smile assessment wizard |
+| faq.js | FAQ accordion |
+| counters.js | Animated stats |
+| contact.js | Mailto form |
+| cookies.js | Cookie banner + settings |
+| ld.js | JSON-LD schema injection |
+| tailwind-config.js | Tailwind theme settings |
 
 ---
 
-## 🧪 Validation
+## Validation
 
-The repo ships a PowerShell check script (`check-site.ps1` — checks splash-on-home-only, id presence) plus:
+Run the structural check:
+
+```powershell
+& "check-site.ps1"
+```
+
+Syntax check the scripts:
 
 ```powershell
 Get-ChildItem js -Filter *.js | ForEach-Object { node --check $_.FullName }
 ```
 
-Run the static checks, click through pages at 320 / 375 / 768 / desktop — buttons, bands, and overlays must stay balanced.
+Test at 320 / 375 / 768 / desktop widths: buttons, bands and overlays must stay balanced.
 
 ---
 
-## 📝 TODO (before going live)
+## Before going live
 
-- [ ] Replace placeholder phone `(201) 555-0192`, address & hours
-- [ ] Plan real patient photos for team & clinic (currently curated Unsplash stock)
-- [ ] Swap `dentalhealth.example` in `js/ld.js` / `llms.txt` with real domain
-- [ ] Optional: change form to a backend/ESP, add real analytics, real booking widget
-
----
-
-## 🙏 Credits
-
-- Photos: [Unsplash](https://unsplash.com)
-- Icons: Inline SVG (check, arrow)
-- Font: Open Sauce One (bundled locally)
+- Replace placeholder phone, address and hours
+- Use real team/clinic photos (current set: stock)
+- Swap dentalhealth.example in js/ld.js and llms.txt with the real domain
+- Wire the form to a backend, add real analytics and a real booking widget
 
 ---
 
-<p align="center"> Made with ☕ and 🦷 </p>
+## Credits
+
+- Photography: Unsplash
+- Icons: inline SVG
+- Typeface: Open Sauce One
+
+All text content and site structure are custom-built for this project.
