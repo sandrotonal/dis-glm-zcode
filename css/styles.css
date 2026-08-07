@@ -1,0 +1,73 @@
+html { scroll-behavior: smooth; }
+html, body, #root { height: 100%; margin: 0; padding: 0; }
+body {
+    font-family: 'Open Sauce One', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.splash-exit { opacity: 0; transition: opacity 0.7s ease; }
+[data-reveal] { opacity: 0; transform: translateY(24px); }
+
+#scroll-progress {
+    position: fixed; top: 0; left: 0; height: 2.5px;
+    background: #000; z-index: 60; width: 0%;
+    will-change: width; pointer-events: none;
+}
+
+#navbar {
+    transition: box-shadow 0.3s ease, transform 0.4s cubic-bezier(0.76,0,0.24,1), background-color 0.3s ease;
+}
+#navbar.scrolled { box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+#navbar.nav-hidden { transform: translateY(-100%); }
+
+[data-anim="fade-up"] { opacity: 0; transform: translateY(30px); }
+[data-anim="fade-left"] { opacity: 0; transform: translateX(-30px); }
+[data-anim="fade-right"] { opacity: 0; transform: translateX(30px); }
+[data-anim="fade-in"] { opacity: 0; }
+[data-anim].anim-visible {
+    opacity: 1 !important;
+    transform: translate(0,0) !important;
+    transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+
+#testimonial-quote, #testimonial-author, #testimonial-stars {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.marquee-mask {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    contain: layout style paint;
+    will-change: transform;
+}
+
+.footer-link { position: relative; }
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 1px;
+    background: currentColor;
+    transition: width 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.footer-link:hover::after { width: 100%; }
+
+#back-to-top {
+    transition: opacity 0.35s ease, transform 0.35s ease, background-color 0.2s ease;
+}
+
+.cta-btn {
+    transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease, background-color 0.2s ease;
+}
+.cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+    [data-anim], [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
