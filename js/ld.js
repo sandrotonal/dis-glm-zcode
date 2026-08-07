@@ -14,6 +14,7 @@
         name: 'Dental Health',
         description: 'Modern, gentle dentistry in West New York (NJ) — implants, whitening, cosmetic dentistry and orthodontics under one roof since 2010.',
         url: 'https://dentalhealth.example/',
+        image: 'https://dentalhealth.example/img/clinic-1.jpg',
         telephone: '+1-201-555-0192',
         priceRange: '$$',
         address: {
