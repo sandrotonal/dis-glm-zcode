@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Dental Health</title>
+    <link href="https://db.onlinewebfonts.com/c/1cd1e7d71e048159768fd90b39846902?family=Open+Sauce+One" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/42acf9aa4a6dc2f2886a3f682e337ead?family=Open+Sauce+One+Bold" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white">
+
+    <div id="scroll-progress"></div>
+
+    <!-- ===== SPLASH SCREEN ===== -->
+    <div id="splash" class="fixed inset-0 z-[100] bg-white flex items-end justify-start">
+        <span id="splash-counter" class="text-7xl md:text-9xl font-bold tabular-nums p-6 md:p-10 leading-none text-black select-none">0</span>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-2 md:py-3 bg-white/80 backdrop-blur-md">
+        <a href="index.html" class="flex flex-col no-underline">
+            <span class="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none text-black">Dental</span>
+            <span class="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none -mt-1.5 md:-mt-2 text-black">Health</span>
+            <span class="text-[8px] md:text-[9px] font-medium leading-none mt-1.5 md:mt-2 text-black/50">quality healthcare</span>
+        </a>
+        <div class="hidden md:flex items-center gap-4">
+            <a href="index.html" class="px-6 py-3 bg-white rounded-full border border-black text-sm font-semibold hover:bg-black hover:text-white transition-colors duration-200 no-underline">Menu</a>
+            <a href="services.html#emergency" class="text-sm font-semibold text-black no-underline">Dental Emergency</a>
+        </div>
+        <button id="hamburger" class="md:hidden w-10 h-10 flex items-center justify-center relative" aria-label="Menu">
+            <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] -translate-y-2"></span>
+            <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] opacity-100 scale-x-100"></span>
+            <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] translate-y-2"></span>
+        </button>
+    </nav>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden pointer-events-none">
+        <div id="menu-backdrop" class="absolute inset-0 bg-black/20 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+        <div id="menu-panel" class="absolute top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]">
+            <div class="flex flex-col justify-center h-full px-8 gap-1">
+                <a href="index.html" class="menu-link text-4xl font-bold text-black hover:text-neutral-500 opacity-0 translate-x-8 transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]">Home</a>
+                <a href="services.html" class="menu-link text-4xl font-bold text-black hover:text-neutral-500 opacity-0 translate-x-8 transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]">Services</a>
+                <a href="about.html" class="menu-link text-4xl font-bold text-black hover:text-neutral-500 opacity-0 translate-x-8 transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]">About</a>
+                <a href="index.html#testimonials" class="menu-link text-4xl font-bold text-black hover:text-neutral-500 opacity-0 translate-x-8 transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]">Reviews</a>
+                <a href="contact.html" class="menu-link text-4xl font-bold text-black hover:text-neutral-500 opacity-0 translate-x-8 transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]">Contact</a>
+            </div>
+            <div id="menu-bottom" class="absolute bottom-0 left-0 right-0 px-8 pb-8 opacity-0 transition-opacity duration-500" style="transition-delay:450ms">
+                <div class="pt-8 border-t border-neutral-200">
+                    <p class="text-sm font-semibold text-black mb-4">Dental Emergency</p>
+                    <a href="contact.html" class="block w-full px-6 py-4 bg-black rounded-full text-white text-sm font-semibold hover:bg-neutral-800 transition-colors duration-200 text-center no-underline">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="min-h-[70vh] md:min-h-[75vh] w-full flex flex-col pt-24 md:pt-28 px-3 md:px-5 pb-1.5 md:pb-2 gap-1.5 md:gap-2">
+        <div data-anim="fade-in" class="flex-1 min-h-0 rounded-xl md:rounded-2xl bg-stone-50 overflow-hidden relative">
+            <span class="absolute top-5 left-5 md:top-8 md:left-8 text-[10px] md:text-xs font-semibold text-black/35 uppercase tracking-[0.2em] z-10">Home / Contact</span>
+            <span class="absolute top-12 left-5 md:top-16 md:left-8 text-xs md:text-sm font-semibold text-black/50 z-10">6000 Boulevard East, West New York, NJ 07093</span>
+            <div class="absolute bottom-5 left-4 md:bottom-9 md:left-6 z-10">
+                <h1 class="text-black text-[clamp(3.5rem,12vw,11rem)] font-bold leading-[0.82] tracking-tight">Contact<br/>Us</h1>
+            </div>
+            <span class="absolute bottom-6 right-4 md:bottom-10 md:right-8 text-white text-xs md:text-sm font-semibold z-10">Free Consultation</span>
+        </div>
+    </section>
+
+    <!-- ===== INFO + FORM ===== -->
+    <section class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-4 md:px-5 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+            <div>
+                <h2 data-anim="fade-left" class="text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[0.92] text-black mb-6">Let&rsquo;s talk<br/>about your<br/>smile.</h2>
+                <div class="flex flex-col gap-7">
+                    <div data-anim="fade-up" data-anim-delay="120">
+                        <p class="text-[10px] md:text-xs font-semibold text-black/30 uppercase tracking-[0.2em] mb-1.5">Call Us</p>
+                        <a href="tel:+12015550192" class="text-2xl md:text-4xl font-bold text-black hover:text-black/45 transition-colors duration-200 leading-tight no-underline">(201) 555-0192</a>
+                    </div>
+                    <div data-anim="fade-up" data-anim-delay="220">
+                        <p class="text-[10px] md:text-xs font-semibold text-black/30 uppercase tracking-[0.2em] mb-1.5">Visit Us</p>
+                        <p class="text-sm md:text-base text-black font-semibold leading-relaxed">6000 Boulevard East<br>West New York, NJ 07093</p>
+                    </div>
+                    <div data-anim="fade-up" data-anim-delay="320">
+                        <p class="text-[10px] md:text-xs font-semibold text-black/30 uppercase tracking-[0.2em] mb-1.5">Working Hours</p>
+                        <p class="text-sm md:text-base text-black font-semibold leading-relaxed">Mon &ndash; Fri: 8:00 &ndash; 18:00<br>Sat: 9:00 &ndash; 14:00</p>
+                    </div>
+                    <div data-anim="fade-up" data-anim-delay="420">
+                        <p class="text-[10px] md:text-xs font-semibold text-black/30 uppercase tracking-[0.2em] mb-1.5">Emergency</p>
+                        <a href="services.html#emergency" class="text-sm md:text-base text-black font-semibold hover:text-black/45 transition-colors duration-200 no-underline">Same-day appointments available &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div data-anim="fade-up">
+                <form id="contact-form" class="rounded-2xl bg-stone-50 p-6 md:p-10 flex flex-col gap-5" novalidate>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[10px] md:text-xs font-semibold text-black/40 uppercase tracking-[0.2em]">Name *</span>
+                            <input type="text" name="name" required placeholder="Your name" class="bg-transparent border-b border-black/15 focus:border-black outline-none pb-2 text-sm md:text-base font-semibold text-black placeholder:text-black/25 transition-colors duration-200">
+                        </label>
+                        <label class="flex flex-col gap-2">
+                            <span class="text-[10px] md:text-xs font-semibold text-black/40 uppercase tracking-[0.2em]">Email *</span>
+                            <input type="email" name="email" required placeholder="you@email.com" class="bg-transparent border-b border-black/15 focus:border-black outline-none pb-2 text-sm md:text-base font-semibold text-black placeholder:text-black/30 transition-colors duration-200">
+                        </label>
+                    </div>
+                    <label class="flex flex-col gap-2">
+                        <span class="text-[10px] md:text-xs font-semibold text-black/40 uppercase tracking-[0.2em]">Phone</span>
+                        <input type="tel" name="phone" placeholder="(201) 555-0000" class="bg-transparent border-b border-black/15 focus:border-black outline-none pb-2 text-sm md:text-base font-semibold text-black placeholder:text-black/30 transition-colors duration-200">
+                    </label>
+                    <label class="flex flex-col gap-2">
+                        <span class="text-[10px] md:text-xs font-semibold text-black/40 uppercase tracking-[0.2em]">Message *</span>
+                        <textarea name="message" rows="4" required placeholder="What would you like to ask about?" class="bg-transparent border-b border-black/15 focus:border-black outline-none pb-2 text-sm md:text-base font-semibold text-black placeholder:text-black/30 resize-none transition-colors duration-200"></textarea>
+                    </label>
+                    <button type="submit" class="cta-btn self-start px-8 py-4 bg-black rounded-full text-white text-sm font-semibold">Send Message</button>
+                    <p class="text-[10px] md:text-xs font-semibold text-black/35">This opens your email app with the message pre-filled &mdash; no data is stored.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-black">
+        <div class="max-w-6xl mx-auto px-4 md:px-5 pt-12 md:pt-16 pb-8 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            <div class="col-span-2 md:col-span-1">
+                <a href="index.html" class="flex flex-col mb-4 no-underline">
+                    <span class="text-white text-lg font-extrabold uppercase tracking-tight leading-none">Dental</span>
+                    <span class="text-white text-lg font-extrabold uppercase tracking-tight leading-none -mt-1">Health</span>
+                </a>
+                <p class="text-white/35 text-xs leading-relaxed max-w-[200px]">Providing professional dental services with the latest technology since 2010.</p>
+            </div>
+            <div>
+                <p class="text-white/25 text-[10px] font-semibold uppercase tracking-[0.2em] mb-4">Services</p>
+                <div class="flex flex-col gap-2.5">
+                    <a href="services.html#implants" class="footer-link text-white/45 text-sm font-semibold hover:text-white transition-colors duration-200 no-underline">Dental Implants</a>
+                    <a href="services.html#whitening" class="footer-link text-white/45 text-sm font-semibold hover:text-white transition-colors duration-200 no-underline">Teeth Whitening</a>
+                    <a href="services.html#cosmetic" class="footer-link text-white/45 text-sm font-semibold hover:text-white transition-colors duration-200 no-underline">Cosmetic Dentistry</a>
+                    <a href="services.html#orthodontics" class="footer-link text-white/45 text-sm font-semibold hover:text-white transition-colors duration-200 no-underline">Orthodontics</a>
+                </div>
+            </div>
+            <div>
+                <p class="text-white/25 text-[10px] font-semibold uppercase tracking-[0.2em] mb-4">Quick Links</p>
+                <div class="flex flex-col gap-2.5">
+                    <a href="index.html" class="footer-link text-white/45 text-sm font-semibold hover:text-white transition-colors duration-200 no-underline">Home</a>
+                    <a href="about.html" class="footer-link text-white/45 text-sm font-semibold hover:text-white transition-colors duration-200 no-underline">About Us</a>
+                    <a href="index.html#testimonials" class="footer-link text-white/45 text-sm font-semibold hover:text-white transition-colors duration-200 no-underline">Reviews</a>
+                    <a href="contact.html" class="footer-link text-white/45 text-sm font-semibold hover:text-white transition-colors duration-200 no-underline">Contact</a>
+                </div>
+            </div>
+            <div class="col-span-2 md:col-span-1">
+                <p class="text-white/25 text-[10px] font-semibold uppercase tracking-[0.2em] mb-4">Contact</p>
+                <div class="flex flex-col gap-2.5">
+                    <a href="tel:+12015550192" class="text-white/45 text-sm font-semibold hover:text-white transition-colors duration-200 no-underline">(201) 555-0192</a>
+                    <p class="text-white/45 text-sm font-semibold">6000 Boulevard East</p>
+                    <p class="text-white/45 text-sm font-semibold">West New York, NJ 07093</p>
+                    <p class="text-white/45 text-sm font-semibold">Mon&ndash;Fri 8&ndash;18, Sat 9&ndash;14</p>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 md:px-5 py-5 border-t border-white/8 flex flex-col md:flex-row items-center justify-between gap-3">
+            <p class="text-white/20 text-xs font-semibold">&copy; <span id="footer-year">2025</span> Dental Health. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="privacy.html" class="text-white/20 text-xs font-semibold hover:text-white/50 transition-colors duration-200 no-underline">Privacy Policy</a>
+                <a href="terms.html" class="text-white/20 text-xs font-semibold hover:text-white/50 transition-colors duration-200 no-underline">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="back-to-top" class="fixed bottom-5 right-5 md:bottom-6 md:right-6 z-40 w-10 h-10 md:w-11 md:h-11 bg-black text-white rounded-full flex items-center justify-center opacity-0 translate-y-4 pointer-events-none" aria-label="Back to top">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3m0 0L4 7m4-4l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <script src="js/core.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

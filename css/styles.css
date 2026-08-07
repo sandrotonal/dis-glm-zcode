@@ -52,6 +52,10 @@ body {
 }
 .footer-link:hover::after { width: 100%; }
 
+/* Aktif sayfa işareti (site.js tarafından eklenir) */
+.footer-link.footer-current { color: #ffffff; }
+.footer-link.footer-current::after { width: 100%; }
+
 #back-to-top {
     transition: opacity 0.35s ease, transform 0.35s ease, background-color 0.2s ease;
 }
