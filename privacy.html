@@ -14,11 +14,6 @@
 
     <div id="scroll-progress"></div>
 
-    <!-- ===== SPLASH SCREEN ===== -->
-    <div id="splash" class="fixed inset-0 z-[100] bg-white flex items-end justify-start">
-        <span id="splash-counter" class="text-7xl md:text-9xl font-bold tabular-nums p-6 md:p-10 leading-none text-black select-none">0</span>
-    </div>
-
     <!-- ===== NAVBAR ===== -->
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-2 md:py-3 bg-white/80 backdrop-blur-md">
         <a href="index.html" class="flex flex-col no-underline">
@@ -27,8 +22,8 @@
             <span class="text-[8px] md:text-[9px] font-medium leading-none mt-1.5 md:mt-2 text-black/50">quality healthcare</span>
         </a>
         <div class="hidden md:flex items-center gap-4">
-            <a href="index.html" class="px-6 py-3 bg-white rounded-full border border-black text-sm font-semibold hover:bg-black hover:text-white transition-colors duration-200 no-underline">Menu</a>
-            <a href="services.html#emergency" class="text-sm font-semibold text-black no-underline">Dental Emergency</a>
+            <button class="px-6 py-3 bg-white rounded-full border border-black text-sm font-semibold hover:bg-black hover:text-white transition-colors duration-200">Menu</button>
+            <span class="text-sm font-semibold text-black">Dental Emergency</span>
         </div>
         <button id="hamburger" class="md:hidden w-10 h-10 flex items-center justify-center relative" aria-label="Menu">
             <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] -translate-y-2"></span>
@@ -58,63 +53,103 @@
     </div>
 
     <!-- ===== PAGE HERO ===== -->
-    <section class="min-h-[60vh] md:min-h-[65vh] w-full flex flex-col pt-24 md:pt-28 px-3 md:px-5 pb-1.5 md:pb-2 gap-1.5 md:gap-2">
-        <div data-anim="fade-in" class="flex-1 min-h-0 rounded-xl md:rounded-2xl bg-stone-50 overflow-hidden relative">
-            <span class="absolute top-5 left-5 md:top-8 md:left-8 text-[10px] md:text-xs font-semibold text-black/35 uppercase tracking-[0.2em] z-10">Home / Legal</span>
-            <span class="absolute top-12 left-5 md:top-16 md:left-8 text-xs md:text-sm font-semibold text-black/50 z-10">Last updated: January 2026</span>
-            <div class="absolute bottom-5 left-4 md:bottom-9 md:left-6 z-10">
-                <h1 class="text-black text-[clamp(3rem,10vw,9rem)] font-bold leading-[0.82] tracking-tight">Privacy<br/>Policy</h1>
-            </div>
-            <span class="absolute bottom-6 right-4 md:bottom-10 md:right-8 text-white text-xs md:text-sm font-semibold z-10">Transparency first</span>
+    <section class="pt-28 md:pt-40 pb-14 md:pb-20 w-full">
+        <div class="max-w-6xl mx-auto px-4 md:px-5">
+            <p class="text-[10px] md:text-xs font-semibold text-black/35 uppercase tracking-[0.2em] mb-6 md:mb-8" data-anim="fade-in">Home / Legal</p>
+            <h1 class="text-black text-[clamp(3rem,11vw,10rem)] font-bold leading-[0.82] tracking-tight" data-anim="fade-up">Privacy<br/>Policy</h1>
+            <p class="mt-6 md:mt-8 text-sm md:text-base text-black/45 font-semibold leading-relaxed max-w-md" data-anim="fade-up" data-anim-delay="100">Last updated: January 2026</p>
         </div>
     </section>
 
     <!-- ===== CONTENT ===== -->
-    <section class="py-16 md:py-24">
-        <div class="max-w-3xl mx-auto px-4 md:px-5 flex flex-col gap-10">
-            <div class="flex flex-col gap-3" data-anim="fade-up">
-                <p class="text-xs md:text-sm font-semibold text-black/40">This policy explains how <strong class="text-black">Dental Health</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;) handles information when you use this website, call us, or visit the practice at 6000 Boulevard East, West New York, NJ 07093.</p>
-                <p class="text-xs md:text-sm font-semibold text-black/40 leading-relaxed">This website is a static site: we do not run analytics trackers, advertising pixels, or third-party cookies. The fonts are loaded from a third-party service and the site itself stores no personal data.</p>
+    <section class="pb-14 md:pb-20">
+        <div class="max-w-6xl mx-auto px-4 md:px-5">
+
+            <div data-anim="fade-up" class="border-t border-black/10">
+                <div class="py-6 md:py-10 pl-3 md:pl-5">
+                    <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed max-w-2xl">This policy explains how <strong class="text-black">Dental Health</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;) handles information when you use this website, call us, or visit the practice at 6000 Boulevard East, West New York, NJ 07093.</p>
+                    <p class="mt-4 text-sm md:text-base text-black/50 font-semibold leading-relaxed max-w-2xl">This website is a static site: we do not run analytics trackers, advertising pixels, or third-party cookies. The fonts are loaded from a third-party service and the site itself stores no personal data.</p>
+                </div>
             </div>
 
-            <div class="space-y-10">
-                <div data-anim="fade-up">
-                    <h2 class="text-2xl md:text-3xl font-bold text-black mb-3">1. Information you give us</h2>
-                    <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed">We collect the details you choose to share when you call us, write to us, or send the contact form (name, email, phone, and message). This information is used only to respond to your enquiry and to arrange appointments.</p>
-                </div>
-                <div data-anim="fade-up">
-                    <h2 class="text-2xl md:text-3xl font-bold text-black mb-3">2. Health information</h2>
-                    <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed">Medical and dental history is collected only in person at the practice, kept secure and confidential, and never shared with third parties except where required by law or with your written consent.</p>
-                </div>
-                <div data-anim="fade-up">
-                    <h2 class="text-2xl md:text-3xl font-bold text-black mb-3">3. Cookies &amp; analytics</h2>
-                    <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed">This site does not set marketing cookies. The Tailwind CSS framework is loaded from a content delivery network; no personal data is transmitted in the process.</p>
-                </div>
-                <div data-anim="fade-up">
-                    <h2 class="text-2xl md:text-3xl font-bold text-black mb-3">4. Sharing</h2>
-                    <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed">We never sell or rent your information. Information is shared only with your explicit permission, or where we are legally required to do so.</p>
-                </div>
-                <div data-anim="fade-up">
-                    <h2 class="text-2xl md:text-3xl font-bold text-black mb-3">5. Your rights</h2>
-                    <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed">You may at any time ask us what information we hold about you, request a copy, ask for corrections, or ask for it to be deleted &mdash; contact us and we will act within 30 days.</p>
-                </div>
-                <div data-anim="fade-up">
-                    <h2 class="text-2xl md:text-3xl font-bold text-black mb-3">6. Contact</h2>
-                    <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed">For any privacy question or request, call <a href="tel:+12015550192" class="text-black underline underline-offset-4 no-underline">(201) 555-0192</a>, or write to the address above.</p>
+            <div class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="0">
+                <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
+                <div class="py-6 md:py-10 pl-3 md:pl-5 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">01</span>
+                    <div class="md:col-span-7">
+                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Information you give us</h2>
+                        <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed mt-3 max-w-xl">We collect the details you choose to share when you call us, write to us, or send the contact form (name, email, phone, and message). This information is used only to respond to your enquiry and to arrange appointments.</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="80">
+                <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
+                <div class="py-6 md:py-10 pl-3 md:pl-5 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">02</span>
+                    <div class="md:col-span-7">
+                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Health information</h2>
+                        <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed mt-3 max-w-xl">Medical and dental history is collected only in person at the practice, kept secure and confidential, and never shared with third parties except where required by law or with your written consent.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="160">
+                <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
+                <div class="py-6 md:py-10 pl-3 md:pl-5 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">03</span>
+                    <div class="md:col-span-7">
+                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Cookies &amp; analytics</h2>
+                        <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed mt-3 max-w-xl">This site does not set marketing cookies. The Tailwind CSS framework is loaded from a content delivery network; no personal data is transmitted in the process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="240">
+                <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
+                <div class="py-6 md:py-10 pl-3 md:pl-5 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">04</span>
+                    <div class="md:col-span-7">
+                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Sharing</h2>
+                        <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed mt-3 max-w-xl">We never sell or rent your information. Information is shared only with your explicit permission, or where we are legally required to do so.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="320">
+                <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
+                <div class="py-6 md:py-10 pl-3 md:pl-5 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">05</span>
+                    <div class="md:col-span-7">
+                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Your rights</h2>
+                        <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed mt-3 max-w-xl">You may at any time ask us what information we hold about you, request a copy, ask for corrections, or ask for it to be deleted &mdash; contact us and we will act within 30 days.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative border-t border-b border-black/10" data-anim="fade-up" data-anim-delay="400">
+                <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
+                <div class="py-6 md:py-10 pl-3 md:pl-5 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">06</span>
+                    <div class="md:col-span-7">
+                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Contact</h2>
+                        <p class="text-sm md:text-base text-black/50 font-semibold leading-relaxed mt-3 max-w-xl">For any privacy question or request, call <a href="tel:+12015550192" class="text-black underline underline-offset-4">(201) 555-0192</a>, or write to the address above.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- ===== CTA ===== -->
-    <section class="pb-20 md:pb-28">
-        <div class="max-w-6xl mx-auto px-4 md:px-5">
-            <div class="rounded-2xl bg-black px-6 md:px-12 py-12 md:py-16 flex flex-col md:flex-row items-center justify-between gap-6" data-anim="fade-up">
-                <div>
-                    <p class="text-xs text-white/45 font-semibold mb-2">Still have questions?</p>
-                    <h2 class="text-2xl md:text-4xl font-bold text-white leading-tight">Talk to us directly.</h2>
-                </div>
-                <a href="contact.html" class="cta-btn shrink-0 px-8 py-4 bg-white rounded-full text-black text-sm font-semibold no-underline">Contact Us</a>
+    <section class="py-20 md:py-28 border-t border-black/5">
+        <div class="max-w-6xl mx-auto px-4 md:px-5 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
+            <div>
+                <h2 data-anim="fade-left" class="text-[clamp(2.5rem,6vw,5rem)] font-bold leading-[0.92] text-black mb-6">Still have<br/>questions?</h2>
+            </div>
+            <div class="flex flex-col items-start gap-6" data-anim="fade-up">
+                <p class="text-sm md:text-base text-black/40 leading-relaxed max-w-md">We keep things simple and transparent &mdash; talk to us directly, no hidden clauses.</p>
+                <a href="contact.html" class="cta-btn inline-block px-10 py-4 bg-black rounded-full text-white text-sm font-semibold no-underline">Contact Us</a>
             </div>
         </div>
     </section>
