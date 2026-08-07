@@ -78,15 +78,15 @@
         <div class="max-w-6xl mx-auto px-4 md:px-5">
             <div class="border-t border-b border-black/10 grid grid-cols-2 md:grid-cols-4">
                 <div class="py-8 md:py-12 flex flex-col gap-2 px-4 md:px-6 border-b md:border-b-0 border-l border-black/10 first:border-l-0 max-md:[&:nth-child(odd)]:border-l-0">
-                    <span class="text-4xl md:text-6xl font-bold leading-none text-black">2010</span>
+                    <span class="count-num text-4xl md:text-6xl font-bold leading-none text-black" data-count="2010">2010</span>
                     <span class="text-[10px] md:text-xs font-semibold text-black/40 uppercase tracking-[0.2em]">Serving West NY</span>
                 </div>
                 <div class="py-8 md:py-10 flex flex-col gap-2 px-4 md:px-6 border-l border-black/10">
-                    <span class="text-4xl md:text-6xl font-bold leading-none text-black">8k+</span>
+                    <span class="count-num text-4xl md:text-6xl font-bold leading-none text-black" data-count="8000" data-short="k" data-suffix="+">8k+</span>
                     <span class="text-[10px] md:text-xs font-semibold text-black/40 uppercase tracking-[0.2em]">Smiles transformed</span>
                 </div>
                 <div class="py-8 md:py-10 flex flex-col gap-2 px-4 md:px-6 border-l border-black/10">
-                    <span class="text-4xl md:text-6xl font-bold leading-none text-black">4.9</span>
+                    <span class="count-num text-4xl md:text-6xl font-bold leading-none text-black" data-count="4.9" data-decimals="1">4.9</span>
                     <span class="text-[10px] md:text-xs font-semibold text-black/40 uppercase tracking-[0.2em]">Average rating</span>
                 </div>
                 <div class="py-8 md:py-10 flex flex-col gap-2 px-4 md:px-6 border-l border-black/10">
@@ -128,6 +128,48 @@
                     <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
                     <h3 class="text-base md:text-lg font-bold text-black mb-1.5 pl-3">Flexible Scheduling</h3>
                     <p class="text-sm text-black/45 leading-relaxed pl-3">Early morning, evening, and weekend appointments available to fit your busy lifestyle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section id="team" class="py-20 md:py-28 border-t border-black/5">
+        <div class="max-w-6xl mx-auto px-4 md:px-5">
+            <p class="text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-black/35 mb-6 md:mb-8" data-anim="fade-in">Meet the Team</p>
+            <div class="grid grid-cols-1 md:grid-cols-3">
+                <div class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="0">
+                    <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
+                    <div class="py-7 md:py-9 pl-3 md:pl-5 flex flex-col gap-4">
+                        <span class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-black text-white text-sm md:text-base font-bold flex items-center justify-center">SB</span>
+                        <div>
+                            <h3 class="text-lg md:text-2xl font-bold tracking-tight text-black">Dr. Sarah Bennett</h3>
+                            <p class="text-xs md:text-sm font-semibold text-black/45 mt-1">Lead Dentist</p>
+                            <p class="text-sm md:text-base text-black/45 font-semibold leading-relaxed mt-3">General &amp; cosmetic dentistry — calm chairside manner, obsessed with detail.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="100">
+                    <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
+                    <div class="py-7 md:py-9 pl-3 md:pl-5 flex flex-col gap-4">
+                        <span class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-black text-white text-sm md:text-base font-bold flex items-center justify-center">ER</span>
+                        <div>
+                            <h3 class="text-lg md:text-2xl font-bold tracking-tight text-black">Dr. Elena Reyes</h3>
+                            <p class="text-xs md:text-sm font-semibold text-black/45 mt-1">Orthodontist</p>
+                            <p class="text-sm md:text-base text-black/45 font-semibold leading-relaxed mt-3">Clear aligners and facial-first orthodontics for every age.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative border-t border-b border-black/10" data-anim="fade-up" data-anim-delay="200">
+                    <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
+                    <div class="py-7 md:py-9 pl-3 md:pl-5 flex flex-col gap-4">
+                        <span class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-black text-white text-sm md:text-base font-bold flex items-center justify-center">MK</span>
+                        <div>
+                            <h3 class="text-lg md:text-2xl font-bold tracking-tight text-black">Dr. Marcus Kim</h3>
+                            <p class="text-xs md:text-sm font-semibold text-black/45 mt-1">Implant Surgeon</p>
+                            <p class="text-sm md:text-base text-black/45 font-semibold leading-relaxed mt-3">Surgical &amp; restorative implants — single tooth to full arch.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,5 +244,7 @@
     <script src="js/core.js"></script>
     <script src="js/site.js"></script>
     <script src="js/cookies.js"></script>
+    <script src="js/ld.js"></script>
+    <script src="js/counters.js"></script>
 </body>
 </html>

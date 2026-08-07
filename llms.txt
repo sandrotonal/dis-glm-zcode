@@ -1,0 +1,32 @@
+# Dental Health
+
+Modern, gentle dentistry in West New York, NJ. We provide dental implants, porcelain veneers, cosmetic dentistry, teeth whitening, orthodontics and emergency dental care under one roof since 2010.
+
+- Address: 6000 Boulevard East, West New York, NJ 07093, USA
+- Phone: +1 201 555 0192
+- Hours: Mon–Fri 08:00–18:00, Sat 09:00–14:00
+
+## Services
+
+- [Dental Implants](services.html#implants): permanent, natural-looking replacement for missing teeth
+- [Porcelain Veneers](services.html#veneers): minimal-prep, stain-resistant smile reshaping
+- [Cosmetic Dentistry](services.html#cosmetic): crowns and restorations, full smile makeover
+- [Teeth Whitening](services.html#whitening): enamel-friendly in-office or take-home brightening
+- [Orthodontics](services.html#orthodontics): clear aligners and discreet braces for any age
+- [Emergency Dental Care](services.html#emergency): same-day appointments for pain and trauma
+
+## Pages
+
+- [Home](index.html)
+- [Services](services.html)
+- [About](about.html)
+- [Contact](contact.html)
+- [Privacy Policy](privacy.html)
+- [Terms of Service](terms.html)
+
+## Facts
+
+- Since: 2010
+- Rating: 4.9 / 5
+- Happy patients: 8,000+
+- FAQ: whitening does not damage enamel; implants are placed under local anesthesia; orthodontics works at any age; we accept most dental insurance; emergency slots are kept every day.

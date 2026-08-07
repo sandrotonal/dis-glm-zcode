@@ -114,3 +114,37 @@ body {
 .ck-toggle.on::after { transform: translateX(21px); }
 .ck-toggle.locked { opacity: 0.55; cursor: not-allowed; }
 .ck-toggle.locked.on { background: #000; }
+
+/* ============ FAQ ACCORDION (faq.js) ============ */
+.faq-a {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.76,0,0.24,1);
+}
+.faq-a > div { overflow: hidden; }
+.faq-row.open .faq-a { grid-template-rows: 1fr; }
+.faq-chevron { transition: transform 0.35s cubic-bezier(0.76,0,0.24,1); }
+.faq-row.open .faq-chevron { transform: rotate(45deg); }
+
+/* ============ SMILE ASSESSMENT (quiz.js) ============ */
+.quiz-option {
+    border: 1px solid rgba(0,0,0,0.12);
+    background: #fff;
+    border-radius: 9999px;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.quiz-option:hover { border-color: #000; transform: translateY(-1px); }
+.quiz-option.selected { background: #000; color: #fff; border-color: #000; }
+.quiz-step { transition: opacity 0.35s ease, transform 0.35s ease; }
+
+/* ============ CANLI SAYAÇ (counters.js) ============ */
+.count-num { font-variant-numeric: tabular-nums; }
+
+/* ============ MOBILE STICKY CTA (site.js) ============ */
+#mobile-cta { transition: transform 0.45s cubic-bezier(0.76,0,0.24,1); }
+#mobile-cta.hidden-cta { transform: translateY(120%); }

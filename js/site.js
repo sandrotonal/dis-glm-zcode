@@ -189,6 +189,31 @@
         animObserver.observe(el);
     });
 
+    /* ------------------- MOBİL SABİT CTA ÇUBUĞU (Call/Book) ------------------- */
+    var mobileBar = null;
+    if (window.matchMedia && !window.matchMedia('(min-width: 768px)').matches) {
+        mobileBar = document.createElement('div');
+        mobileBar.id = 'mobile-cta';
+        mobileBar.className = 'md:hidden fixed bottom-0 left-0 right-0 z-30 grid grid-cols-2 border-t border-black/10';
+        mobileBar.innerHTML =
+            '<a href="tel:+12015550192" class="flex items-center justify-center gap-2 py-4 bg-white text-black text-sm font-semibold no-underline">' +
+            '  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">' +
+            '    <path d="M3 1h2l1 3-1.5 1.5a9 9 0 0 0 4 4L10 8l3 1.5V13a1 1 0 0 1-1 1A11 11 0 0 1 1 3a1 1 0 0 1 1-1h1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>' +
+            '  </svg>Call Now</a>' +
+            '<a href="contact.html" class="flex items-center justify-center py-4 bg-black text-white text-sm font-semibold no-underline">Book Appointment</a>';
+        document.body.appendChild(mobileBar);
+    }
+
+    if (mobileBar) {
+        App.on('scroll', function (data) {
+            if (data.scrollY > thresholds.navHide && data.scrollY > lastScrollY) {
+                mobileBar.classList.add('hidden-cta');
+            } else {
+                mobileBar.classList.remove('hidden-cta');
+            }
+        });
+    }
+
     /* ------------------ FOOTER YILI + AKTİF SAYFA ------------------ */
     var yearEl = document.getElementById('footer-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
