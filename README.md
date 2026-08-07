@@ -110,6 +110,15 @@ Test at 320 / 375 / 768 / desktop widths: buttons, bands and overlays must stay 
 
 ---
 
+## Author
+
+This project is designed and developed by **gucluyumhe**.
+
+- Website: [https://gucluyumhe.dev/](https://gucluyumhe.dev/)
+- GitHub: [@sandrotonal](https://github.com/sandrotonal) — this repository: [dis-glm-zcode](https://github.com/sandrotonal/dis-glm-zcode)
+
+---
+
 ## Credits
 
 - Photography: Unsplash

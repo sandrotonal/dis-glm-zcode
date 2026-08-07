@@ -10,13 +10,22 @@
     var BASE = {
         '@context': 'https://schema.org',
         '@type': 'Dentist',
-        '@id': 'https://dentalhealth.example/#clinic',
+        '@id': 'https://gucluyumhe.dev/#clinic',
         name: 'Dental Health',
         description: 'Modern, gentle dentistry in West New York (NJ) — implants, whitening, cosmetic dentistry and orthodontics under one roof since 2010.',
-        url: 'https://dentalhealth.example/',
-        image: 'https://dentalhealth.example/img/clinic-1.jpg',
+        url: 'https://gucluyumhe.dev/',
+        image: 'https://gucluyumhe.dev/img/clinic-1.jpg',
         telephone: '+1-201-555-0192',
         priceRange: '$$',
+        foundingDate: '2010',
+        knowsAbout: [
+            'Dental implants',
+            'Porcelain veneers',
+            'Cosmetic dentistry',
+            'Teeth whitening',
+            'Orthodontics',
+            'Emergency dental care'
+        ],
         address: {
             '@type': 'PostalAddress',
             streetAddress: '6000 Boulevard East',
@@ -55,6 +64,27 @@
     }
 
     inject(BASE);
+
+    var pageTitle = (document.title || '').replace(/\s*\|\s*Dental Health.*$/i, '').trim() || 'Home';
+    var crumbs = [{
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://gucluyumhe.dev/'
+    }];
+    if (pageTitle !== 'Home') {
+        crumbs.push({
+            '@type': 'ListItem',
+            position: 2,
+            name: pageTitle,
+            item: 'https://gucluyumhe.dev/' + (window.location.pathname.split('/').pop() || 'index.html')
+        });
+    }
+    inject({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: crumbs
+    });
 
     var faqRows = document.querySelectorAll('.faq-row');
     if (faqRows.length) {

@@ -67,9 +67,9 @@
             '    <p class="text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-black/50 mb-1.5">Cookies &amp; Preferences</p>' +
             '    <p class="text-sm md:text-base text-black/70 font-semibold leading-relaxed">We keep things simple: no tracking cookies, no ad pixels. You decide what stays stored in your browser.</p>' +
             '  </div>' +
-            '  <div class="flex flex-wrap items-center gap-3 shrink-0">' +
-            '    <button type="button" data-ck="open" class="px-5 py-3.5 bg-white rounded-full border border-black text-sm font-semibold hover:bg-black hover:text-white transition-colors duration-200">Cookie Settings</button>' +
-            '    <a href="#" data-ck="accept" class="px-7 py-3.5 bg-black rounded-full text-white text-sm font-semibold no-underline hover:bg-neutral-800 transition-colors duration-200">Accept All</a>' +
+            '  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 w-full sm:w-auto sm:min-w-[320px] shrink-0">' +
+            '    <button type="button" data-ck="open" class="w-full px-6 py-3.5 bg-white rounded-full border border-black text-sm font-semibold text-center hover:bg-black hover:text-white transition-colors duration-200">Cookie Settings</button>' +
+            '    <a href="#" data-ck="accept" class="w-full px-6 py-3.5 bg-black rounded-full text-white text-sm font-semibold no-underline text-center hover:bg-neutral-800 transition-colors duration-200">Accept All</a>' +
             '  </div>' +
             '</div>';
         document.body.appendChild(banner);
@@ -105,12 +105,12 @@
             '      <button type="button" data-ck="close" aria-label="Close" class="w-10 h-10 flex items-center justify-center rounded-full border border-black/10 text-black text-lg leading-none hover:bg-black hover:text-white transition-colors duration-200">&times;</button>' +
             '    </div>' +
             '    <div class="px-6 md:px-8 py-1">' + CATEGORIES.map(toggleRow).join('') + '</div>' +
-            '    <div class="px-6 md:px-8 py-5 md:py-6 border-t border-black/10 flex flex-wrap items-center justify-between gap-3">' +
+            '    <div class="px-6 md:px-8 py-5 md:py-6 border-t border-black/10 flex flex-col md:flex-row md:items-center justify-between gap-4">' +
             '      <p class="text-[10px] md:text-xs font-semibold text-black/40">Nothing leaves your browser.<br class="hidden md:block"/> See the <a href="privacy.html" class="underline underline-offset-4">privacy policy</a>.</p>' +
-            '      <div class="flex flex-wrap items-center gap-2.5">' +
-            '        <button type="button" data-ck="reject" class="px-5 py-3 bg-white rounded-full border border-black/15 text-xs font-semibold text-black/60 hover:text-black hover:border-black transition-colors duration-200">Reject All</button>' +
-            '        <button type="button" data-ck="accept" class="px-5 py-3 bg-white rounded-full border border-black text-xs font-semibold hover:bg-black hover:text-white transition-colors duration-200">Accept All</button>' +
-            '        <button type="button" data-ck="save" class="px-6 py-3 bg-black rounded-full text-white text-xs font-semibold hover:bg-neutral-800 transition-colors duration-200">Save Choices</button>' +
+            '      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 w-full md:w-auto md:min-w-[400px]">' +
+            '        <button type="button" data-ck="reject" class="w-full px-4 py-3 bg-white rounded-full border border-black/15 text-xs font-semibold text-black/60 text-center hover:text-black hover:border-black transition-colors duration-200">Reject All</button>' +
+            '        <button type="button" data-ck="accept" class="w-full px-4 py-3 bg-white rounded-full border border-black text-xs font-semibold text-center hover:bg-black hover:text-white transition-colors duration-200">Accept All</button>' +
+            '        <button type="button" data-ck="save" class="w-full px-4 py-3 bg-black rounded-full text-white text-xs font-semibold text-center hover:bg-neutral-800 transition-colors duration-200">Save Choices</button>' +
             '      </div>' +
             '    </div>' +
             '  </div>' +

@@ -5,24 +5,36 @@ Modern, gentle dentistry in West New York, NJ. We provide dental implants, porce
 - Address: 6000 Boulevard East, West New York, NJ 07093, USA
 - Phone: +1 201 555 0192
 - Hours: Mon–Fri 08:00–18:00, Sat 09:00–14:00
+- Website: https://gucluyumhe.dev/
 
 ## Services
 
-- [Dental Implants](services.html#implants): permanent, natural-looking replacement for missing teeth
-- [Porcelain Veneers](services.html#veneers): minimal-prep, stain-resistant smile reshaping
-- [Cosmetic Dentistry](services.html#cosmetic): crowns and restorations, full smile makeover
-- [Teeth Whitening](services.html#whitening): enamel-friendly in-office or take-home brightening
-- [Orthodontics](services.html#orthodontics): clear aligners and discreet braces for any age
-- [Emergency Dental Care](services.html#emergency): same-day appointments for pain and trauma
+- [Dental Implants](https://gucluyumhe.dev/services.html#implants): permanent, natural-looking replacement for missing teeth
+- [Porcelain Veneers](https://gucluyumhe.dev/services.html#veneers): minimal-prep, stain-resistant smile reshaping
+- [Cosmetic Dentistry](https://gucluyumhe.dev/services.html#cosmetic): crowns and restorations, full smile makeover
+- [Teeth Whitening](https://gucluyumhe.dev/services.html#whitening): enamel-friendly in-office or take-home brightening
+- [Orthodontics](https://gucluyumhe.dev/services.html#orthodontics): clear aligners and discreet braces for any age
+- [Emergency Dental Care](https://gucluyumhe.dev/services.html#emergency): same-day appointments for pain and trauma
 
 ## Pages
 
-- [Home](index.html)
-- [Services](services.html)
-- [About](about.html)
-- [Contact](contact.html)
-- [Privacy Policy](privacy.html)
-- [Terms of Service](terms.html)
+- [Home](https://gucluyumhe.dev/index.html): clinic overview, smile gallery, smile assessment quiz and testimonials
+- [Services](https://gucluyumhe.dev/services.html): full treatment index with FAQ
+- [About](https://gucluyumhe.dev/about.html): story, stats and the dental team
+- [Contact](https://gucluyumhe.dev/contact.html): phone, hours, clinic photos and location map
+- [Privacy Policy](https://gucluyumhe.dev/privacy.html)
+- [Terms of Service](https://gucluyumhe.dev/terms.html)
+
+## Facts
+
+- Since: 2010
+- Rating: 4.9 / 5
+- Happy patients: 8,000+
+- FAQ: whitening does not damage enamel; implants are placed under local anesthesia; orthodontics works at any age; we accept most dental insurance; emergency slots are kept every day.
+
+## Credit
+
+- Designed and built by: [gucluyumhe — https://gucluyumhe.dev/](https://gucluyumhe.dev/)
 
 ## Facts
 
