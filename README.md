@@ -6,6 +6,19 @@ Note: static demo. All clinic data (phone, address, hours) is placeholder and mu
 
 ---
 
+## Built With
+
+| Icon | Tech | Details |
+| --- | --- | --- |
+| ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) | HTML5 | Semantic markup, 6 pages |
+| ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) | CSS3 | Fluid clamp() typography, hairline borders, custom animations |
+| ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) | Tailwind CSS | CDN + shared tailwind-config.js |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) | JavaScript (ES5) | 12 vanilla modules, no frameworks, no build step |
+| ![JSON-LD](https://img.shields.io/badge/JSON--LD-4B8BBE?style=for-the-badge&logo=json&logoColor=white) | Structured data | Dentist + FAQPage schema injected per page |
+| ![Responsive](https://img.shields.io/badge/Responsive-Yes-28a745?style=for-the-badge) | Mobile-first | 320 / 375 / 768 / desktop tested |
+
+---
+
 ## Features
 
 ### Design & UX
