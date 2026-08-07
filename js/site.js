@@ -10,7 +10,29 @@
 
     /* -------------------- SPLASH (sayfada varsa) -------------------- */
     var splash = document.getElementById('splash');
-    if (splash) {
+    var splashSeen = false;
+    try { splashSeen = sessionStorage.getItem('splashSeen') === '1'; } catch (e) {}
+    var hasTarget = location.hash.length > 1;
+    var reducedMotion = false;
+    try { reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+
+    /* Hedef (#...., örn. #testimonials) varsa navbar yüksekliğini hesaba
+       katarak bölüme kay. Tıklamayla gelen ziyaretlerde boşuna oynatma olmaz. */
+    function jumpToHash() {
+        var id = decodeURIComponent(location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (!target) return;
+        var navEl = document.getElementById('navbar');
+        var offset = (navEl ? navEl.offsetHeight : 0) + 16;
+        setTimeout(function () {
+            window.scrollTo({
+                top: Math.max(0, target.getBoundingClientRect().top + window.scrollY - offset),
+                behavior: 'smooth'
+            });
+        }, 150);
+    }
+
+    if (splash && !splashSeen && !hasTarget && !reducedMotion) {
         var splashCounter = document.getElementById('splash-counter');
         var count = 0;
         var splashTimer = setInterval(function () {
@@ -23,11 +45,18 @@
                     setTimeout(function () {
                         splash.remove();
                         App.set('splashDone', true);
+                        try { sessionStorage.setItem('splashSeen', '1'); } catch (e) {}
                     }, 700);
                 }, 200);
             }
         }, 20);
+    } else if (splash) {
+        splash.remove();
+        App.set('splashDone', true);
+        try { sessionStorage.setItem('splashSeen', '1'); } catch (e) {}
     }
+
+    if (hasTarget) jumpToHash();
 
     /* ------------------ MOBILE MENU ------------------ */
     var hamburger = document.getElementById('hamburger');
