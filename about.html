@@ -121,12 +121,81 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-3 md:gap-4" data-anim="fade-up" data-anim-delay="100">
-                <div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-sm aspect-[4/5] bg-neutral-100">
-                    <img src="img/clinic-interior.png" alt="Luxury dental clinic reception and consultation room" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            <!-- SINGLE SLIDER / CAROUSEL -->
+            <div class="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl shadow-black/5 border border-black/10 bg-neutral-900 group" data-anim="fade-up" data-anim-delay="100" id="about-carousel" aria-roledescription="carousel" aria-label="Dental Health Clinic and Technology Gallery">
+                <!-- Slides Container -->
+                <div class="relative w-full h-full" id="about-slides">
+                    <!-- Slide 1 -->
+                    <div class="about-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10" data-index="0">
+                        <img src="img/clinic-interior.png" alt="Luxury Scandinavian dental clinic consultation suite in West New York NJ" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                        <div class="absolute top-4 left-4 backdrop-blur-md bg-black/40 border border-white/20 px-3.5 py-1.5 rounded-full flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                            <span class="text-white text-xs font-semibold tracking-wide">Modern Practice Suite</span>
+                        </div>
+                        <div class="absolute bottom-5 left-5 right-14">
+                            <p class="text-white/70 text-[10px] md:text-xs font-semibold uppercase tracking-widest">Atmosphere</p>
+                            <p class="text-white text-sm md:text-base font-bold">Boutique Comfort &amp; Serene Consultations</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="about-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none" data-index="1">
+                        <img src="img/dental-tech.png" alt="High precision 3D digital intraoral scanning workstation at Dental Health" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                        <div class="absolute top-4 left-4 backdrop-blur-md bg-black/40 border border-white/20 px-3.5 py-1.5 rounded-full flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                            <span class="text-white text-xs font-semibold tracking-wide">3D Digital Dentistry</span>
+                        </div>
+                        <div class="absolute bottom-5 left-5 right-14">
+                            <p class="text-white/70 text-[10px] md:text-xs font-semibold uppercase tracking-widest">Innovation</p>
+                            <p class="text-white text-sm md:text-base font-bold">Next-Gen Intraoral 3D Smile Scanning</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="about-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none" data-index="2">
+                        <img src="img/service-veneers.png" alt="Aesthetic custom porcelain smile design veneers at Dental Health" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                        <div class="absolute top-4 left-4 backdrop-blur-md bg-black/40 border border-white/20 px-3.5 py-1.5 rounded-full flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                            <span class="text-white text-xs font-semibold tracking-wide">Cosmetic Lab Suite</span>
+                        </div>
+                        <div class="absolute bottom-5 left-5 right-14">
+                            <p class="text-white/70 text-[10px] md:text-xs font-semibold uppercase tracking-widest">Precision</p>
+                            <p class="text-white text-sm md:text-base font-bold">Bespoke Hand-Crafted Veneers</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="about-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none" data-index="3">
+                        <img src="img/service-implants.png" alt="Titanium computer-guided dental implant model at Dental Health" class="w-full h-full object-cover" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                        <div class="absolute top-4 left-4 backdrop-blur-md bg-black/40 border border-white/20 px-3.5 py-1.5 rounded-full flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                            <span class="text-white text-xs font-semibold tracking-wide">Surgical Suite</span>
+                        </div>
+                        <div class="absolute bottom-5 left-5 right-14">
+                            <p class="text-white/70 text-[10px] md:text-xs font-semibold uppercase tracking-widest">Restoration</p>
+                            <p class="text-white text-sm md:text-base font-bold">Guided Implant &amp; Bone Regeneration</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="rounded-2xl md:rounded-3xl overflow-hidden shadow-sm aspect-[4/5] bg-neutral-100 mt-6 md:mt-10">
-                    <img src="img/dental-tech.png" alt="3D digital intraoral scanning at Dental Health" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+
+                <!-- Prev / Next Navigation Controls -->
+                <button type="button" id="carousel-prev" class="absolute left-3.5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 md:w-10 md:h-10 rounded-full backdrop-blur-md bg-white/70 hover:bg-black text-black hover:text-white flex items-center justify-center transition-all duration-200 shadow-md opacity-80 group-hover:opacity-100 active:scale-95 border border-black/5" aria-label="Previous slide">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M8.5 11L4.5 7L8.5 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" id="carousel-next" class="absolute right-3.5 top-1/2 -translate-y-1/2 z-20 w-9 h-9 md:w-10 md:h-10 rounded-full backdrop-blur-md bg-white/70 hover:bg-black text-black hover:text-white flex items-center justify-center transition-all duration-200 shadow-md opacity-80 group-hover:opacity-100 active:scale-95 border border-black/5" aria-label="Next slide">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5.5 3L9.5 7L5.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+
+                <!-- Indicator Dots / Pills -->
+                <div class="absolute bottom-3.5 right-4 z-20 flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10" id="carousel-indicators">
+                    <button type="button" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-5 bg-white" data-target="0" aria-label="Go to slide 1"></button>
+                    <button type="button" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-white/40 hover:bg-white/70" data-target="1" aria-label="Go to slide 2"></button>
+                    <button type="button" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-white/40 hover:bg-white/70" data-target="2" aria-label="Go to slide 3"></button>
+                    <button type="button" class="carousel-dot h-1.5 rounded-full transition-all duration-300 w-1.5 bg-white/40 hover:bg-white/70" data-target="3" aria-label="Go to slide 4"></button>
                 </div>
             </div>
         </div>
@@ -286,16 +355,24 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto px-4 md:px-5 py-5 border-t border-white/8 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p class="text-white/20 text-xs font-semibold">&copy; <span id="footer-year">2025</span> Dental Health. All rights reserved.</p>
-            <div class="flex gap-6">
-                <button type="button" data-ck="open" class="text-white/20 text-xs font-semibold hover:text-white/50 transition-colors duration-200 cursor-pointer">Cookie Settings</button>
-                <a href="privacy.html" class="footer-link text-white/20 text-xs font-semibold hover:text-white/50 transition-colors duration-200 no-underline">Privacy Policy</a>
-                <a href="terms.html" class="footer-link text-white/20 text-xs font-semibold hover:text-white/50 transition-colors duration-200 no-underline">Terms of Service</a>
+        <div class="max-w-6xl mx-auto px-4 md:px-5 py-6 border-t border-white/8 flex flex-col md:flex-row items-center justify-between gap-4 pb-28 md:pb-6">
+            <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-center sm:text-left">
+                <p class="text-white/30 text-xs font-semibold">&copy; <span id="footer-year">2025</span> Dental Health. All rights reserved.</p>
+                <div class="flex items-center gap-3 text-xs font-semibold text-white/30">
+                    <button type="button" data-ck="open" class="hover:text-white transition-colors duration-200 cursor-pointer">Cookies</button>
+                    <span>&middot;</span>
+                    <a href="privacy.html" class="footer-link hover:text-white transition-colors duration-200 no-underline">Privacy</a>
+                    <span>&middot;</span>
+                    <a href="terms.html" class="footer-link hover:text-white transition-colors duration-200 no-underline">Terms</a>
+                </div>
             </div>
-        </div>
-        <div class="max-w-6xl mx-auto px-4 md:px-5 pb-5 text-center">
-            <p class="text-white/10 text-[11px] font-semibold">Designed &amp; built by <a href="https://gucluyumhe.dev/" target="_blank" rel="noopener noreferrer" class="text-white/30 hover:text-white transition-colors duration-200 no-underline">gucluyumhe</a> &mdash; gucluyumhe.dev</p>
+            <div>
+                <a href="https://gucluyumhe.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white/60 hover:text-white transition-all duration-200 no-underline group shadow-sm">
+                    <span class="text-white/40 group-hover:text-white/60">Designed &amp; built by</span>
+                    <span class="text-white font-bold group-hover:underline underline-offset-2">gucluyumhe.dev</span>
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" class="text-white/40 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
         </div>
     </footer>
 
@@ -322,5 +399,6 @@
     <script src="js/cookies.js"></script>
     <script src="js/ld.js"></script>
     <script src="js/counters.js"></script>
+    <script src="js/about-carousel.js"></script>
 </body>
 </html>
