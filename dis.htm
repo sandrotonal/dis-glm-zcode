@@ -82,6 +82,17 @@
             transition: opacity 0.35s ease, transform 0.35s ease, background-color 0.2s ease;
         }
 
+        #mobile-cta {
+            transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+            will-change: transform;
+        }
+        #mobile-cta.cta-hidden {
+            transform: translateY(110%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
         .cta-btn {
             transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease, background-color 0.2s ease;
         }
@@ -109,21 +120,53 @@
     </div>
 
     <!-- ===== NAVBAR ===== -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-2 md:py-3 bg-white/80 backdrop-blur-md">
-        <a href="#section1" class="flex flex-col no-underline">
-            <span class="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none text-black">Dental</span>
-            <span class="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none -mt-1.5 md:-mt-2 text-black">Health</span>
-            <span class="text-[8px] md:text-[9px] font-medium leading-none mt-1.5 md:mt-2 text-black/50">quality healthcare</span>
-        </a>
-        <div class="hidden md:flex items-center gap-4">
-            <button class="px-6 py-3 bg-white rounded-full border border-black text-sm font-semibold hover:bg-black hover:text-white transition-colors duration-200">Menu</button>
-            <span class="text-sm font-semibold text-black">Dental Emergency</span>
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] px-4 md:px-8 py-3 md:py-3.5 bg-white/85 backdrop-blur-md border-b border-black/[0.05]">
+        <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-2.5 group no-underline">
+                <span class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs md:text-sm tracking-tight transition-transform duration-300 group-hover:scale-105 shadow-xs">
+                    DH
+                </span>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-1 leading-none">
+                        <span class="text-base md:text-lg font-extrabold uppercase tracking-tight text-black">Dental</span>
+                        <span class="text-base md:text-lg font-extrabold uppercase tracking-tight text-black">Health</span>
+                    </div>
+                    <span class="text-[8px] md:text-[9px] font-semibold leading-none mt-1 text-black/40 tracking-wider uppercase">quality healthcare</span>
+                </div>
+            </a>
+
+            <!-- Desktop Center Pill Navigation -->
+            <div class="hidden md:flex items-center bg-black/[0.04] p-1 rounded-full border border-black/[0.06] backdrop-blur-md">
+                <ul class="flex items-center gap-1 m-0 p-0 list-none">
+                    <li><a href="index.html" class="desktop-nav-link px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 text-black/60 hover:text-black hover:bg-black/5 no-underline">Home</a></li>
+                    <li><a href="services.html" class="desktop-nav-link px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 text-black/60 hover:text-black hover:bg-black/5 no-underline">Services</a></li>
+                    <li><a href="about.html" class="desktop-nav-link px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 text-black/60 hover:text-black hover:bg-black/5 no-underline">About</a></li>
+                    <li><a href="index.html#testimonials" class="desktop-nav-link px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 text-black/60 hover:text-black hover:bg-black/5 no-underline">Reviews</a></li>
+                    <li><a href="contact.html" class="desktop-nav-link px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 text-black/60 hover:text-black hover:bg-black/5 no-underline">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Desktop Right CTA & Hotline -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="tel:+12015550192" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/10 bg-white/70 hover:bg-white text-xs font-semibold text-black transition-all duration-200 no-underline shadow-xs hover:border-black/30 group">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-black/50 group-hover:text-black/70">Emergency:</span>
+                    <span class="font-bold text-black">(201) 555-0192</span>
+                </a>
+                <a href="contact.html" class="cta-btn flex items-center gap-2 px-5 py-2 bg-black rounded-full text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-md hover:bg-neutral-800 no-underline">
+                    <span>Book Online</span>
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5"><path d="M1 7h12m0 0L8 2m5 5L8 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="hamburger" class="md:hidden w-10 h-10 flex items-center justify-center relative" aria-label="Menu">
+                <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] -translate-y-2"></span>
+                <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] opacity-100 scale-x-100"></span>
+                <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] translate-y-2"></span>
+            </button>
         </div>
-        <button id="hamburger" class="md:hidden w-10 h-10 flex items-center justify-center relative" aria-label="Menu">
-            <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] -translate-y-2"></span>
-            <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] opacity-100 scale-x-100"></span>
-            <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] translate-y-2"></span>
-        </button>
     </nav>
 
     <!-- ===== MOBILE MENU ===== -->
@@ -418,18 +461,41 @@ Implants</h3>
                 </div>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto px-4 md:px-5 py-5 border-t border-white/8 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p class="text-white/20 text-xs font-semibold">2025 Dental Health. All rights reserved.</p>
-            <div class="flex gap-6">
-                <a href="#" class="text-white/20 text-xs font-semibold hover:text-white/50 transition-colors duration-200 no-underline">Privacy Policy</a>
-                <a href="#" class="text-white/20 text-xs font-semibold hover:text-white/50 transition-colors duration-200 no-underline">Terms of Service</a>
+        <div class="max-w-6xl mx-auto px-4 md:px-5 py-6 border-t border-white/8 flex flex-col md:flex-row items-center justify-between gap-4 pb-28 md:pb-6">
+            <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-center sm:text-left">
+                <p class="text-white/30 text-xs font-semibold">&copy; 2025 Dental Health. All rights reserved.</p>
+                <div class="flex items-center gap-3 text-xs font-semibold text-white/30">
+                    <a href="#" class="footer-link hover:text-white transition-colors duration-200 no-underline">Privacy Policy</a>
+                    <span>&middot;</span>
+                    <a href="#" class="footer-link hover:text-white transition-colors duration-200 no-underline">Terms of Service</a>
+                </div>
+            </div>
+            <div>
+                <a href="https://gucluyumhe.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white/60 hover:text-white transition-all duration-200 no-underline group shadow-sm">
+                    <span class="text-white/40 group-hover:text-white/60">Designed &amp; built by</span>
+                    <span class="text-white font-bold group-hover:underline underline-offset-2">gucluyumhe.dev</span>
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" class="text-white/40 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
             </div>
         </div>
     </footer>
 
+    <!-- ===== MOBILE BOTTOM CTA BAR ===== -->
+    <div id="mobile-cta" class="md:hidden fixed bottom-0 left-0 right-0 z-30 grid grid-cols-2 border-t border-black/10 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] bg-white">
+        <a href="tel:+12015550192" class="flex items-center justify-center gap-2 py-4 bg-white text-black text-sm font-semibold no-underline active:bg-neutral-100">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 1h2l1 3-1.5 1.5a9 9 0 0 0 4 4L10 8l3 1.5V13a1 1 0 0 1-1 1A11 11 0 0 1 1 3a1 1 0 0 1 1-1h1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            <span>Call Now</span>
+        </a>
+        <a href="#" class="flex items-center justify-center py-4 bg-black text-white text-sm font-semibold no-underline active:bg-neutral-800">
+            <span>Book Appointment</span>
+        </a>
+    </div>
+
     <!-- ===== BACK TO TOP ===== -->
-    <button id="back-to-top" class="fixed bottom-5 right-5 md:bottom-6 md:right-6 z-40 w-10 h-10 md:w-11 md:h-11 bg-black text-white rounded-full flex items-center justify-center opacity-0 translate-y-4 pointer-events-none" aria-label="Back to top">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3m0 0L4 7m4-4l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <button id="back-to-top" class="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 w-10 h-10 md:w-11 md:h-11 bg-black text-white rounded-full flex items-center justify-center opacity-0 translate-y-4 pointer-events-none shadow-lg border border-white/15 hover:bg-neutral-800 transition-all duration-300" aria-label="Back to top">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3m0 0L4 7m4-4l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
 
     <script>
@@ -600,42 +666,66 @@ Implants</h3>
         var progressBar = document.getElementById('scroll-progress');
         var navbar = document.getElementById('navbar');
         var backToTop = document.getElementById('back-to-top');
-        var lastScrollY = 0;
+        var mobileBar = document.getElementById('mobile-cta');
+        var lastScrollY = window.pageYOffset || window.scrollY || 0;
         var scrollTicking = false;
+        var scrollIdleTimer = null;
 
         function handleScroll() {
-            var scrollY = window.scrollY;
+            var scrollY = window.scrollY || window.pageYOffset || 0;
             var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            var isScrollingDown = scrollY > 300 && scrollY > lastScrollY;
 
             // Progress
-            progressBar.style.width = (docHeight > 0 ? (scrollY / docHeight) * 100 : 0) + '%';
+            if (progressBar) progressBar.style.width = (docHeight > 0 ? (scrollY / docHeight) * 100 : 0) + '%';
 
             // Navbar shadow + bg
-            if (scrollY > 50) {
-                navbar.classList.add('scrolled');
-                navbar.style.backgroundColor = 'rgba(255,255,255,0.95)';
-            } else {
-                navbar.classList.remove('scrolled');
-                navbar.style.backgroundColor = '';
+            if (navbar) {
+                if (scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                    navbar.style.backgroundColor = 'rgba(255,255,255,0.95)';
+                } else {
+                    navbar.classList.remove('scrolled');
+                    navbar.style.backgroundColor = '';
+                }
+
+                // Navbar hide/show on direction
+                if (isScrollingDown) {
+                    navbar.classList.add('nav-hidden');
+                } else {
+                    navbar.classList.remove('nav-hidden');
+                }
             }
 
-            // Navbar hide/show on direction
-            if (scrollY > 300 && scrollY > lastScrollY) {
-                navbar.classList.add('nav-hidden');
-            } else {
-                navbar.classList.remove('nav-hidden');
+            // Mobile CTA bar hide/show
+            if (mobileBar) {
+                if (isScrollingDown) {
+                    mobileBar.classList.add('cta-hidden');
+                } else {
+                    mobileBar.classList.remove('cta-hidden');
+                }
             }
+
+            // Auto-reveal on scroll idle/stop (scrollu bırakınca)
+            clearTimeout(scrollIdleTimer);
+            scrollIdleTimer = setTimeout(function () {
+                if (navbar) navbar.classList.remove('nav-hidden');
+                if (mobileBar) mobileBar.classList.remove('cta-hidden');
+            }, 220);
+
             lastScrollY = scrollY;
 
             // Back to top
-            if (scrollY > 600) {
-                backToTop.style.opacity = '1';
-                backToTop.style.transform = 'translateY(0)';
-                backToTop.style.pointerEvents = 'auto';
-            } else {
-                backToTop.style.opacity = '0';
-                backToTop.style.transform = 'translateY(16px)';
-                backToTop.style.pointerEvents = 'none';
+            if (backToTop) {
+                if (scrollY > 600) {
+                    backToTop.style.opacity = '1';
+                    backToTop.style.transform = 'translateY(0)';
+                    backToTop.style.pointerEvents = 'auto';
+                } else {
+                    backToTop.style.opacity = '0';
+                    backToTop.style.transform = 'translateY(16px)';
+                    backToTop.style.pointerEvents = 'none';
+                }
             }
 
             scrollTicking = false;

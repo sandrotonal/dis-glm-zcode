@@ -29,22 +29,53 @@
     <div id="scroll-progress"></div>
 
     <!-- ===== NAVBAR ===== -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-2 md:py-3 bg-white/80 backdrop-blur-md">
-        <a href="index.html" class="flex flex-col no-underline">
-            <span class="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none text-black">Dental</span>
-            <span class="text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none -mt-1.5 md:-mt-2 text-black">Health</span>
-            <span class="text-[8px] md:text-[9px] font-medium leading-none mt-1.5 md:mt-2 text-black/50">quality healthcare</span>
-        </a>
-        <div class="hidden md:flex items-center gap-4">
-            <a href="services.html" class="text-sm font-semibold text-black hover:text-black/45 transition-colors duration-200 no-underline">Services</a>
-            <button class="px-6 py-3 bg-white rounded-full border border-black text-sm font-semibold hover:bg-black hover:text-white transition-colors duration-200">Menu</button>
-            <span class="text-sm font-semibold text-black">Dental Emergency</span>
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] px-4 md:px-8 py-3 md:py-3.5 bg-white/85 backdrop-blur-md border-b border-black/[0.05]">
+        <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-2.5 group no-underline">
+                <span class="w-8 h-8 md:w-9 md:h-9 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs md:text-sm tracking-tight transition-transform duration-300 group-hover:scale-105 shadow-xs">
+                    DH
+                </span>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-1 leading-none">
+                        <span class="text-base md:text-lg font-extrabold uppercase tracking-tight text-black">Dental</span>
+                        <span class="text-base md:text-lg font-extrabold uppercase tracking-tight text-black">Health</span>
+                    </div>
+                    <span class="text-[8px] md:text-[9px] font-semibold leading-none mt-1 text-black/40 tracking-wider uppercase">quality healthcare</span>
+                </div>
+            </a>
+
+            <!-- Desktop Center Pill Navigation -->
+            <div class="hidden md:flex items-center bg-black/[0.04] p-1 rounded-full border border-black/[0.06] backdrop-blur-md">
+                <ul class="flex items-center gap-1 m-0 p-0 list-none">
+                    <li><a href="index.html" class="desktop-nav-link px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 text-black/60 hover:text-black hover:bg-black/5 no-underline">Home</a></li>
+                    <li><a href="services.html" class="desktop-nav-link px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 text-black/60 hover:text-black hover:bg-black/5 no-underline">Services</a></li>
+                    <li><a href="about.html" class="desktop-nav-link px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 text-black/60 hover:text-black hover:bg-black/5 no-underline">About</a></li>
+                    <li><a href="index.html#testimonials" class="desktop-nav-link px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 text-black/60 hover:text-black hover:bg-black/5 no-underline">Reviews</a></li>
+                    <li><a href="contact.html" class="desktop-nav-link px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all duration-200 text-black/60 hover:text-black hover:bg-black/5 no-underline">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Desktop Right CTA & Hotline -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="tel:+12015550192" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-black/10 bg-white/70 hover:bg-white text-xs font-semibold text-black transition-all duration-200 no-underline shadow-xs hover:border-black/30 group">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-black/50 group-hover:text-black/70">Emergency:</span>
+                    <span class="font-bold text-black">(201) 555-0192</span>
+                </a>
+                <a href="contact.html" class="cta-btn flex items-center gap-2 px-5 py-2 bg-black rounded-full text-white text-xs font-bold uppercase tracking-wider transition-all duration-200 shadow-md hover:bg-neutral-800 no-underline">
+                    <span>Book Online</span>
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" class="transition-transform duration-200 group-hover:translate-x-0.5"><path d="M1 7h12m0 0L8 2m5 5L8 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="hamburger" class="md:hidden w-10 h-10 flex items-center justify-center relative" aria-label="Menu">
+                <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] -translate-y-2"></span>
+                <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] opacity-100 scale-x-100"></span>
+                <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] translate-y-2"></span>
+            </button>
         </div>
-        <button id="hamburger" class="md:hidden w-10 h-10 flex items-center justify-center relative" aria-label="Menu">
-            <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] -translate-y-2"></span>
-            <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] opacity-100 scale-x-100"></span>
-            <span class="ham-line absolute h-0.5 w-6 bg-black rounded-full transition-all duration-300 ease-[cubic-bezier(0.76,0,0.24,1)] translate-y-2"></span>
-        </button>
     </nav>
 
     <!-- ===== MOBILE MENU ===== -->
@@ -80,75 +111,153 @@
     <section class="pb-14 md:pb-20">
         <div class="max-w-6xl mx-auto px-4 md:px-5">
 
-            <div id="implants" class="group relative border-t border-black/10">
+            <!-- 01 Dental Implants -->
+            <div id="implants" class="group relative border-t border-black/10" data-anim="fade-up">
                 <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
-                <div class="py-7 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start pl-3 md:pl-5">
-                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">01</span>
-                    <div class="md:col-span-7">
-                        <h2 class="text-2xl md:text-4xl font-bold text-black leading-[1.02]">Dental Implants</h2>
-                        <p class="text-sm md:text-base text-black/45 font-semibold leading-relaxed mt-2 max-w-xl">Permanent, natural-looking replacements for missing teeth &mdash; placed and fused with the jawbone for lifelong stability.</p>
+                <div class="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center px-4 md:px-0 md:pl-5">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35">01</span>
+                    <div class="md:col-span-3 rounded-2xl overflow-hidden aspect-[4/3] bg-neutral-100 shadow-xs">
+                        <img src="img/service-implants.png" alt="Titanium dental implant with ceramic crown" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                     </div>
-                    <a href="contact.html" class="md:col-span-3 md:col-start-10 text-sm md:text-base font-semibold text-black hover:text-black/45 transition-colors duration-200 underline underline-offset-4">Book online</a>
+                    <div class="md:col-span-6">
+                        <h2 class="text-2xl md:text-3xl font-bold text-black leading-tight">Dental Implants</h2>
+                        <p class="text-sm md:text-base text-black/50 font-medium leading-relaxed mt-2 max-w-xl">Permanent, natural-looking replacements for missing teeth &mdash; placed with computer-guided surgical precision and fused with the jawbone for lifelong stability.</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">Lifelong Stability</span>
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">3D Guided Surgery</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 md:text-right w-full md:w-auto mt-2 md:mt-0">
+                        <a href="contact.html" class="cta-btn w-full md:w-auto flex md:inline-flex items-center justify-center gap-2 px-6 py-3.5 md:px-5 md:py-2.5 bg-black text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:bg-neutral-800 no-underline transition-colors text-center">
+                            <span>Book Now</span>
+                            <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5L8 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div id="veneers" class="group relative border-t border-black/10">
+            <!-- 02 Porcelain Veneers -->
+            <div id="veneers" class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="80">
                 <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
-                <div class="py-7 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start pl-3 md:pl-5">
-                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">02</span>
-                    <div class="md:col-span-7">
-                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Porcelain<br/>Veneers</h2>
-                        <p class="text-sm md:text-base text-black/45 font-semibold leading-relaxed mt-2 max-w-xl">Minimal-prep, stain-resistant porcelain that reshapes, recolors and rebalances the front of your smile.</p>
+                <div class="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center px-4 md:px-0 md:pl-5">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35">02</span>
+                    <div class="md:col-span-3 rounded-2xl overflow-hidden aspect-[4/3] bg-neutral-100 shadow-xs">
+                        <img src="img/service-veneers.png" alt="Custom aesthetic porcelain veneers tray" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                     </div>
-                    <a href="contact.html" class="md:col-span-3 md:col-start-10 text-sm md:text-base font-semibold text-black hover:text-black/45 transition-colors duration-200 underline underline-offset-4">Book Online</a>
+                    <div class="md:col-span-6">
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-black leading-tight">Porcelain Veneers</h2>
+                        <p class="text-sm md:text-base text-black/50 font-medium leading-relaxed mt-2 max-w-xl">Minimal-prep, stain-resistant ultra-thin porcelain that reshapes, brightens, and restores harmony to your front smile.</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">Custom Shade Match</span>
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">Minimal Enamel Prep</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 md:text-right w-full md:w-auto mt-2 md:mt-0">
+                        <a href="contact.html" class="cta-btn w-full md:w-auto flex md:inline-flex items-center justify-center gap-2 px-6 py-3.5 md:px-5 md:py-2.5 bg-black text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:bg-neutral-800 no-underline transition-colors text-center">
+                            <span>Book Now</span>
+                            <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5L8 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div id="cosmetic" class="group relative border-t border-black/10">
+            <!-- 03 Cosmetic Dentistry -->
+            <div id="cosmetic" class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="120">
                 <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
-                <div class="py-7 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start pl-3 md:pl-5">
-                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">03</span>
-                    <div class="md:col-span-7">
-                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Cosmetic Dentistry</h2>
-                        <p class="text-sm md:text-base text-black/45 font-semibold leading-relaxed mt-2 max-w-xl">Crowns and restorations designed around your face, your shade and your lifestyle &mdash; a full smile makeover under one roof.</p>
+                <div class="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center px-4 md:px-0 md:pl-5">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35">03</span>
+                    <div class="md:col-span-3 rounded-2xl overflow-hidden aspect-[4/3] bg-neutral-100 shadow-xs">
+                        <img src="img/dental-tech.png" alt="Cosmetic smile makeover and digital dental scanning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                     </div>
-                    <a href="contact.html" class="md:col-span-3 md:col-start-10 text-sm md:text-base font-semibold text-black hover:text-black/45 transition-colors duration-200 underline underline-offset-4">Book Online</a>
+                    <div class="md:col-span-6">
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-black leading-tight">Cosmetic Smile Makeover</h2>
+                        <p class="text-sm md:text-base text-black/50 font-medium leading-relaxed mt-2 max-w-xl">Crowns, bonding, and aesthetic restorations tailored to your facial proportions, skin tone, and personal smile goals.</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">Digital Smile Design</span>
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">Full Arch Transformation</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 md:text-right w-full md:w-auto mt-2 md:mt-0">
+                        <a href="contact.html" class="cta-btn w-full md:w-auto flex md:inline-flex items-center justify-center gap-2 px-6 py-3.5 md:px-5 md:py-2.5 bg-black text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:bg-neutral-800 no-underline transition-colors text-center">
+                            <span>Book Now</span>
+                            <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5L8 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div id="whitening" class="group relative border-t border-black/10">
+            <!-- 04 Teeth Whitening -->
+            <div id="whitening" class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="160">
                 <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
-                <div class="py-7 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start pl-3 md:pl-5">
-                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">04</span>
-                    <div class="md:col-span-7">
-                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Teeth<br/>Whitening</h2>
-                        <p class="text-sm md:text-base text-black/45 font-semibold leading-relaxed mt-2 max-w-xl">Enamel-friendly in-office whitening that lifts several shades in one visit, or take-home trays for gradual brightening.</p>
+                <div class="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center px-4 md:px-0 md:pl-5">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35">04</span>
+                    <div class="md:col-span-3 rounded-2xl overflow-hidden aspect-[4/3] bg-neutral-100 shadow-xs">
+                        <img src="img/service-whitening.png" alt="In-office professional laser teeth whitening" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                     </div>
-                    <a href="contact.html" class="md:col-span-3 md:col-start-10 text-sm md:text-base font-semibold text-black hover:text-black/45 transition-colors duration-200 underline underline-offset-4">Book Online</a>
+                    <div class="md:col-span-6">
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-black leading-tight">Teeth Whitening</h2>
+                        <p class="text-sm md:text-base text-black/50 font-medium leading-relaxed mt-2 max-w-xl">Enamel-safe, in-office laser whitening that lightens several shades in under 60 minutes, paired with custom take-home maintenance trays.</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">Instant Results</span>
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">Sensitivity-Free Formula</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 md:text-right w-full md:w-auto mt-2 md:mt-0">
+                        <a href="contact.html" class="cta-btn w-full md:w-auto flex md:inline-flex items-center justify-center gap-2 px-6 py-3.5 md:px-5 md:py-2.5 bg-black text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:bg-neutral-800 no-underline transition-colors text-center">
+                            <span>Book Now</span>
+                            <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5L8 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div id="orthodontics" class="group relative border-t border-black/10">
+            <!-- 05 Orthodontics -->
+            <div id="orthodontics" class="group relative border-t border-black/10" data-anim="fade-up" data-anim-delay="200">
                 <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
-                <div class="py-7 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start pl-3 md:pl-5">
-                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">05</span>
-                    <div class="md:col-span-7">
-                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Orthodontics</h2>
-                        <p class="text-sm md:text-base text-black/45 font-semibold leading-relaxed mt-2 max-w-xl">Clear aligners and discreet braces that straighten teeth and correct bites at any age.</p>
+                <div class="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center px-4 md:px-0 md:pl-5">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35">05</span>
+                    <div class="md:col-span-3 rounded-2xl overflow-hidden aspect-[4/3] bg-neutral-100 shadow-xs">
+                        <img src="img/service-orthodontics.png" alt="Clear invisible orthodontic aligners" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                     </div>
-                    <a href="contact.html" class="md:col-span-3 md:col-start-10 text-sm md:text-base font-semibold text-black hover:text-black/45 transition-colors duration-200 underline underline-offset-4">Book Online</a>
+                    <div class="md:col-span-6">
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-black leading-tight">Clear Orthodontics</h2>
+                        <p class="text-sm md:text-base text-black/50 font-medium leading-relaxed mt-2 max-w-xl">Discreet clear aligners and modern braces that straighten teeth, close gaps, and optimize your bite with zero hassle.</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">Virtually Invisible</span>
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">Adults &amp; Teens</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 md:text-right w-full md:w-auto mt-2 md:mt-0">
+                        <a href="contact.html" class="cta-btn w-full md:w-auto flex md:inline-flex items-center justify-center gap-2 px-6 py-3.5 md:px-5 md:py-2.5 bg-black text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:bg-neutral-800 no-underline transition-colors text-center">
+                            <span>Book Now</span>
+                            <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5L8 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div id="emergency" class="group relative border-t border-b border-black/10">
+            <!-- 06 Emergency Dental Care -->
+            <div id="emergency" class="group relative border-t border-b border-black/10" data-anim="fade-up" data-anim-delay="240">
                 <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-black origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] rounded-full"></div>
-                <div class="py-7 md:py-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-3 items-start pl-3 md:pl-5">
-                    <span class="md:col-span-1 text-sm font-bold text-black/35 pt-1">06</span>
-                    <div class="md:col-span-7">
-                        <h2 class="text-2xl md:text-4xl font-bold tracking-tight text-black leading-tight">Emergency<br/>Dental Care</h2>
-                        <p class="text-sm md:text-base text-black/45 font-semibold leading-relaxed mt-2 max-w-xl">Same-day appointments for pain, broken or knocked-out teeth &mdash; call first and we guide you through it.</p>
+                <div class="py-8 md:py-10 grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 items-center px-4 md:px-0 md:pl-5">
+                    <span class="md:col-span-1 text-sm font-bold text-black/35">06</span>
+                    <div class="md:col-span-3 rounded-2xl overflow-hidden aspect-[4/3] bg-neutral-100 shadow-xs">
+                        <img src="img/service-emergency.png" alt="Emergency dentist treating patient with care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                     </div>
-                    <a href="tel:+12015550192" class="md:col-span-3 md:col-start-10 text-sm md:text-base font-semibold text-black hover:text-black/45 transition-colors duration-200 underline underline-offset-4">Call (201) 555-0192</a>
+                    <div class="md:col-span-6">
+                        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-black leading-tight">Emergency Dental Care</h2>
+                        <p class="text-sm md:text-base text-black/50 font-medium leading-relaxed mt-2 max-w-xl">Same-day appointments for sudden pain, chipped teeth, lost crowns, or dental trauma &mdash; fast relief by board-certified doctors.</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="px-3 py-1 rounded-full bg-rose-50 text-[11px] font-semibold text-rose-700">Same-Day Priority</span>
+                            <span class="px-3 py-1 rounded-full bg-neutral-100 text-[11px] font-semibold text-black/70">Direct Doctor Line</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 md:text-right w-full md:w-auto mt-2 md:mt-0">
+                        <a href="tel:+12015550192" class="cta-btn w-full md:w-auto flex md:inline-flex items-center justify-center gap-2 px-6 py-3.5 md:px-5 md:py-2.5 bg-black text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-sm hover:bg-neutral-800 no-underline transition-colors text-center">
+                            <span>Call Now</span>
+                            <svg width="10" height="10" viewBox="0 0 14 14" fill="none"><path d="M1 7h12m0 0L8 2m5 5L8 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -158,15 +267,15 @@
     <!-- ===== CLINIC PHOTO ===== -->
     <section class="pb-14 md:pb-24">
         <div class="max-w-6xl mx-auto px-4 md:px-5">
-            <div class="relative rounded-2xl overflow-hidden" data-anim="fade-up">
-                <img src="img/clinic-1.jpg" alt="Modern, sterile dental treatment room" class="w-full h-64 md:h-[440px] object-cover" loading="lazy">
-                <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1) 55%, transparent)"></div>
-                <div class="absolute bottom-5 left-5 right-5 md:bottom-8 md:left-8 md:right-8 flex flex-wrap items-end justify-between gap-4">
+            <div class="relative rounded-3xl overflow-hidden shadow-lg" data-anim="fade-up">
+                <img src="img/clinic-interior.png" alt="Modern, sterile luxury dental treatment lounge" class="w-full h-72 md:h-[480px] object-cover" loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 flex flex-wrap items-end justify-between gap-4">
                     <div>
-                        <p class="text-[10px] md:text-xs font-semibold text-white/75 uppercase tracking-[0.2em] mb-2">Our Clinic</p>
-                        <h3 class="text-xl md:text-4xl font-bold text-white leading-tight">Modern, sterile &ndash;<br/>everything under one roof</h3>
+                        <p class="text-[10px] md:text-xs font-bold text-white/80 uppercase tracking-[0.2em] mb-2">Our Clinic Facility</p>
+                        <h3 class="text-2xl md:text-4xl font-bold text-white leading-tight">Modern, sterile &ndash;<br/>everything under one roof</h3>
                     </div>
-                    <a href="about.html" class="cta-btn px-6 py-3.5 md:px-8 md:py-4 bg-white rounded-full text-black text-sm md:text-base font-bold no-underline">Tour Our Facility</a>
+                    <a href="about.html" class="cta-btn px-6 py-3.5 md:px-8 md:py-4 bg-white rounded-full text-black text-sm md:text-base font-bold no-underline shadow-md">Tour Our Facility</a>
                 </div>
             </div>
         </div>
@@ -292,22 +401,43 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto px-4 md:px-5 py-5 border-t border-white/8 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p class="text-white/20 text-xs font-semibold">&copy; <span id="footer-year">2025</span> Dental Health. All rights reserved.</p>
-            <div class="flex gap-6">
-                <button type="button" data-ck="open" class="text-white/20 text-xs font-semibold hover:text-white/50 transition-colors duration-200 cursor-pointer">Cookie Settings</button>
-                <a href="privacy.html" class="footer-link text-white/20 text-xs font-semibold hover:text-white/50 transition-colors duration-200 no-underline">Privacy Policy</a>
-                <a href="terms.html" class="footer-link text-white/20 text-xs font-semibold hover:text-white/50 transition-colors duration-200 no-underline">Terms of Service</a>
+        <div class="max-w-6xl mx-auto px-4 md:px-5 py-6 border-t border-white/8 flex flex-col md:flex-row items-center justify-between gap-4 pb-28 md:pb-6">
+            <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-center sm:text-left">
+                <p class="text-white/30 text-xs font-semibold">&copy; <span id="footer-year">2025</span> Dental Health. All rights reserved.</p>
+                <div class="flex items-center gap-3 text-xs font-semibold text-white/30">
+                    <button type="button" data-ck="open" class="hover:text-white transition-colors duration-200 cursor-pointer">Cookies</button>
+                    <span>&middot;</span>
+                    <a href="privacy.html" class="footer-link hover:text-white transition-colors duration-200 no-underline">Privacy</a>
+                    <span>&middot;</span>
+                    <a href="terms.html" class="footer-link hover:text-white transition-colors duration-200 no-underline">Terms</a>
+                </div>
             </div>
-        </div>
-        <div class="max-w-6xl mx-auto px-4 md:px-5 pb-5 text-center">
-            <p class="text-white/10 text-[11px] font-semibold">Designed &amp; built by <a href="https://gucluyumhe.dev/" target="_blank" rel="noopener noreferrer" class="text-white/30 hover:text-white transition-colors duration-200 no-underline">gucluyumhe</a> &mdash; gucluyumhe.dev</p>
+            <div>
+                <a href="https://gucluyumhe.dev/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white/60 hover:text-white transition-all duration-200 no-underline group shadow-sm">
+                    <span class="text-white/40 group-hover:text-white/60">Designed &amp; built by</span>
+                    <span class="text-white font-bold group-hover:underline underline-offset-2">gucluyumhe.dev</span>
+                    <svg width="10" height="10" viewBox="0 0 12 12" fill="none" class="text-white/40 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"><path d="M2.5 9.5L9.5 2.5M9.5 2.5H4.5M9.5 2.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
         </div>
     </footer>
 
+    <!-- ===== MOBILE BOTTOM CTA BAR ===== -->
+    <div id="mobile-cta" class="md:hidden fixed bottom-0 left-0 right-0 z-30 grid grid-cols-2 border-t border-black/10 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] bg-white">
+        <a href="tel:+12015550192" class="flex items-center justify-center gap-2 py-4 bg-white text-black text-sm font-semibold no-underline active:bg-neutral-100">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 1h2l1 3-1.5 1.5a9 9 0 0 0 4 4L10 8l3 1.5V13a1 1 0 0 1-1 1A11 11 0 0 1 1 3a1 1 0 0 1 1-1h1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            <span>Call Now</span>
+        </a>
+        <a href="contact.html" class="flex items-center justify-center py-4 bg-black text-white text-sm font-semibold no-underline active:bg-neutral-800">
+            <span>Book Appointment</span>
+        </a>
+    </div>
+
     <!-- ===== BACK TO TOP ===== -->
-    <button id="back-to-top" class="fixed bottom-5 right-5 md:bottom-6 md:right-6 z-40 w-10 h-10 md:w-11 md:h-11 bg-black text-white rounded-full flex items-center justify-center opacity-0 translate-y-4 pointer-events-none" aria-label="Back to top">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3m0 0L4 7m4-4l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <button id="back-to-top" class="fixed bottom-20 right-4 md:bottom-6 md:right-6 z-40 w-10 h-10 md:w-11 md:h-11 bg-black text-white rounded-full flex items-center justify-center opacity-0 translate-y-4 pointer-events-none shadow-lg border border-white/15 hover:bg-neutral-800 transition-all duration-300" aria-label="Back to top">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 13V3m0 0L4 7m4-4l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
 
     <script src="js/core.js"></script>

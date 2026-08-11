@@ -124,15 +124,18 @@
         });
     }
 
-    /* ---------- SCROLL: PROGRESS + NAVBAR + BACK-TO-TOP ---------- */
+    /* ---------- SCROLL: PROGRESS + NAVBAR + BACK-TO-TOP + MOBILE CTA ---------- */
     var progressBar = document.getElementById('scroll-progress');
     var navbar = document.getElementById('navbar');
     var backToTop = document.getElementById('back-to-top');
+    var mobileBar = document.getElementById('mobile-cta');
     var thresholds = App.config.thresholds;
-    var lastScrollY = 0;
+    var lastScrollY = window.pageYOffset || window.scrollY || 0;
+    var scrollIdleTimer = null;
 
     App.on('scroll', function (data) {
         var scrollY = data.scrollY;
+        var isScrollingDown = scrollY > thresholds.navHide && scrollY > lastScrollY;
 
         if (progressBar) progressBar.style.width = data.progress + '%';
 
@@ -144,12 +147,29 @@
                 navbar.classList.remove('scrolled');
                 navbar.style.backgroundColor = '';
             }
-            if (scrollY > thresholds.navHide && scrollY > lastScrollY) {
+
+            if (isScrollingDown) {
                 navbar.classList.add('nav-hidden');
             } else {
                 navbar.classList.remove('nav-hidden');
             }
         }
+
+        if (mobileBar) {
+            if (isScrollingDown) {
+                mobileBar.classList.add('cta-hidden');
+            } else {
+                mobileBar.classList.remove('cta-hidden');
+            }
+        }
+
+        /* Scroll durduğunda / bırakıldığında (idle): Header ve Mobil CTA yumuşakça geri gelir */
+        clearTimeout(scrollIdleTimer);
+        scrollIdleTimer = setTimeout(function () {
+            if (navbar) navbar.classList.remove('nav-hidden');
+            if (mobileBar) mobileBar.classList.remove('cta-hidden');
+        }, 220);
+
         lastScrollY = scrollY;
 
         if (backToTop) {
@@ -190,28 +210,17 @@
     });
 
     /* ------------------- MOBİL SABİT CTA ÇUBUĞU (Call/Book) ------------------- */
-    var mobileBar = null;
-    if (window.matchMedia && !window.matchMedia('(min-width: 768px)').matches) {
+    if (!mobileBar) {
         mobileBar = document.createElement('div');
         mobileBar.id = 'mobile-cta';
-        mobileBar.className = 'md:hidden fixed bottom-0 left-0 right-0 z-30 grid grid-cols-2 border-t border-black/10';
+        mobileBar.className = 'md:hidden fixed bottom-0 left-0 right-0 z-30 grid grid-cols-2 border-t border-black/10 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] bg-white';
         mobileBar.innerHTML =
-            '<a href="tel:+12015550192" class="flex items-center justify-center gap-2 py-4 bg-white text-black text-sm font-semibold no-underline">' +
+            '<a href="tel:+12015550192" class="flex items-center justify-center gap-2 py-4 bg-white text-black text-sm font-semibold no-underline active:bg-neutral-100">' +
             '  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">' +
             '    <path d="M3 1h2l1 3-1.5 1.5a9 9 0 0 0 4 4L10 8l3 1.5V13a1 1 0 0 1-1 1A11 11 0 0 1 1 3a1 1 0 0 1 1-1h1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>' +
-            '  </svg>Call Now</a>' +
-            '<a href="contact.html" class="flex items-center justify-center py-4 bg-black text-white text-sm font-semibold no-underline">Book Appointment</a>';
+            '  </svg><span>Call Now</span></a>' +
+            '<a href="contact.html" class="flex items-center justify-center py-4 bg-black text-white text-sm font-semibold no-underline active:bg-neutral-800"><span>Book Appointment</span></a>';
         document.body.appendChild(mobileBar);
-    }
-
-    if (mobileBar) {
-        App.on('scroll', function (data) {
-            if (data.scrollY > thresholds.navHide && data.scrollY > lastScrollY) {
-                mobileBar.classList.add('hidden-cta');
-            } else {
-                mobileBar.classList.remove('hidden-cta');
-            }
-        });
     }
 
     /* ------------------ FOOTER YILI + AKTİF SAYFA ------------------ */
@@ -223,6 +232,17 @@
         var href = (a.getAttribute('href') || '').toLowerCase();
         var file = href.split('#')[0].split('/').pop() || 'index.html';
         if (file === currentFile) a.classList.add('footer-current');
+    });
+
+    /* ------------------ DESKTOP NAVBAR AKTİF SAYFA ------------------ */
+    document.querySelectorAll('.desktop-nav-link[href]').forEach(function (a) {
+        var href = (a.getAttribute('href') || '').toLowerCase();
+        var file = href.split('#')[0].split('/').pop() || 'index.html';
+        var hasHash = href.indexOf('#') > -1;
+        if (file === currentFile && !hasHash) {
+            a.classList.add('bg-black', 'text-white', 'shadow-xs');
+            a.classList.remove('text-black/60', 'hover:bg-black/5');
+        }
     });
 
 })();
