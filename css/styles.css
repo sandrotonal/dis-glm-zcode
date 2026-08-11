@@ -140,6 +140,14 @@ body {
 /* ============ CANLI SAYAÇ (counters.js) ============ */
 .count-num { font-variant-numeric: tabular-nums; }
 
-/* ============ MOBILE STICKY CTA (site.js) ============ */
-#mobile-cta { transition: transform 0.45s cubic-bezier(0.76,0,0.24,1); }
-#mobile-cta.hidden-cta { transform: translateY(120%); }
+/* ============ MOBILE STICKY CTA ============ */
+#mobile-cta {
+    transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.3s ease;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    will-change: transform;
+}
+#mobile-cta.cta-hidden {
+    transform: translateY(110%);
+    opacity: 0;
+    pointer-events: none;
+}
